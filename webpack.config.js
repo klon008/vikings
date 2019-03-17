@@ -92,6 +92,8 @@ const config = {
                     {
                         loader:"resolve-url-loader",
                         options: {
+                            outputPath: 'assets',
+                            publicPath: 'assets'
                           },
                     },
                     "sass-loader",
@@ -139,7 +141,7 @@ const config = {
                   options: {
                         name: '[name].[ext]',
                         outputPath: 'assets',
-                        publicPath: '../../assets/'
+                        publicPath: '../assets'
                   },
                 },
               },
