@@ -138,8 +138,8 @@ const config = {
                   loader: 'file-loader',
                   options: {
                         name: '[name].[ext]',
-                        outputPath: '/assets',
-                        publicPath: '../../public/assets/'
+                        outputPath: 'assets',
+                        publicPath: '../../assets/'
                   },
                 },
               },
