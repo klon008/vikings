@@ -1,0 +1,74 @@
+header
+    .navbar.navbar-dark.bg-dark-m.shadow-sm
+        .container-fluid.topbar-flex
+            .row
+                .topbar-left
+                    a.logo(href='https://vikings.life')
+                        img(src='https://vikings.life/wp-content/uploads/2019/02/cropped-Zero-1.png' style='height: 24px; margin-bottom: 2px;')
+                    a.logo__sitename(href='https://vikings.life')
+                        span.header_logo_text Название сайта
+                    button.navbar-toggler.button-menu-mobile.waves-effect.waves-light.rgba-white-slight(type='button' aria-label='Toggle navigation')
+                        span.md.md-menu
+
+
+                div.counter
+                    div.counter_label
+                        | Общее число посетителей сайта
+                    include _countdown
+                form.form-inline(_lpchecked='1')
+                    input.form-control.navbar__search(type='text' placeholder='Найти на сайте')
+                .infostatususers.d-none.d-xl-flex
+                    .usersonlain
+                        i.usersico__dot.usersico__dot__online
+                        | Пользователей онлайн:
+                        span.kolichonlaininteger
+                            a(href='https://vikings.life/useronline')
+                                strong 1325
+                    .lastzakaztime
+                        i.usersico__dot.usersico__dot__ordercount
+                        | Последний заказ:
+                        span.timemunutlast 1 минуту назад
+                .topbar__buttons
+                    button.btn.btn-primary
+                        span Просмотр объявлений
+                    button.btn.btn-warning
+                        span Создать объявление
+                
+                .topbar__right__buttons
+                    button(type="button").btn.no-outline.text-light.waves-effect.waves-light
+                        i.far.fa-heart
+                    button(type="button").btn.no-outline.text-light.waves-effect.waves-light
+                        i.fas.fa-shopping-cart
+
+                    div.dropdown.hidden-xs.open
+                        button.btn.no-outline.text-light.waves-effect.waves-light(data-toggle='dropdown' aria-expanded='true')
+                            i.fas.fa-language
+                        ul.dropdown-menu.dropdown-menu__right.dropdown-menu__undark
+                            li
+                                a(href='/rus')
+                                    i.flag-icon.flag-icon-ru
+                                    |  Русский
+                            li.divider
+                            li
+                                a(href='/english')
+                                    i.flag-icon.flag-icon-us
+                                    |  English US
+
+                    div.dropdown.hidden-xs.open
+                        button.btn.no-outline.text-light.waves-effect.waves-light(data-toggle='dropdown' aria-expanded='true')
+                            i.icon-settings
+                        ul.dropdown-menu.dropdown-menu__right.dropdown-menu__undark
+                            li
+                                a(href='/site/profile')
+                                    i.ti-user.m-r-10.text-custom
+                                    |  Профиль
+                            li.divider
+                            li
+                                a(href='/logout')
+                                    i.ti-power-off.m-r-10.text-danger
+                                    |  Выход
+
+                    button(type="button").btn.no-outline.text-light.waves-effect.waves-light.right-element
+                        i.far.fa-comment-alt
+                
+                

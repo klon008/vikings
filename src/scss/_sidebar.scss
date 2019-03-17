@@ -1,0 +1,55 @@
+#sidebar{
+    width: $left-bar-width;
+    background-color: #2e323e;
+    position: fixed;
+    top: $top-bar-height;
+    left: 0;
+    height: 100vh;
+    z-index: 9;
+    color: #ffffff;
+    transition: all 0.3s;
+    & > * {
+        padding-left: $left-bar-padding;
+    }
+    .sidebar__header{
+        padding: 0;
+        background-color: $topbar-background;
+    }
+}
+
+.sidebar__user{
+    box-sizing: content-box;
+    display: flex;
+    height: 48px;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
+    padding: 13px 0 56px;
+    & > *{
+        white-space: nowrap;
+        word-wrap: normal;
+    }
+}
+.sidebar__username{
+    font-size: 16px;
+}
+.sidebar__useremail{
+    font-size: 13px;
+    color: rgba(255,255,255,.5);
+}
+.sidebar__usericon{
+    position: absolute;
+    top: 74px;
+    border-radius: 50%;
+    padding: 8px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    background-color: $sidebar-background;
+}
+.sidebar__avatar{
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    margin: 0;
+}

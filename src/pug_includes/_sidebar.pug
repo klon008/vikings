@@ -1,0 +1,33 @@
+nav#sidebar
+  .sidebar__header
+    .sidebar__user
+        h3.sidebar__username Charlie Adams
+        p.sidebar__useremail adams.charlie@mail.com
+    .sidebar__usericon
+      img.sidebar__avatar(src="https://kwork.ru/files/avatar/large/30/24862-2.jpg")
+  .sidebar__content
+    ul.list-unstyled.components    
+      li.active
+        a.dropdown-toggle(href='#homeSubmenu' data-toggle='collapse' aria-expanded='false') Home
+        ul#homeSubmenu.collapse.list-unstyled
+          li
+            a(href='#') Home 1
+          li
+            a(href='#') Home 2
+          li
+            a(href='#') Home 3
+      li
+        a(href='#') About
+      li
+        a.dropdown-toggle(href='#pageSubmenu' data-toggle='collapse' aria-expanded='false') Pages
+        ul#pageSubmenu.collapse.list-unstyled
+          li
+            a(href='#') Page 1
+          li
+            a(href='#') Page 2
+          li
+            a(href='#') Page 3
+      li
+        a(href='#') Portfolio
+      li
+        a(href='#') Contact
