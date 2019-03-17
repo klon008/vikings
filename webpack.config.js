@@ -8,7 +8,7 @@ const HtmlBeautifyPlugin = require('html-beautify-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const exclude_tmpl = /(node_modules|bower_components|cached_uglify|undr)/;
 const CopyPlugin = require('copy-webpack-plugin');
-
+console.log( path.join(__dirname,'public', 'assets'));
 const config = {
     mode: 'development',
     entry: [srcDir + '/js/app.js'],
@@ -18,7 +18,7 @@ const config = {
         filename: 'js/build.js',
         library: "vikings"
     },
-    watch: true,
+    watch: false,
     watchOptions: {
         aggregateTimeout: 100,
         ignored: /node_modules/,
@@ -56,7 +56,7 @@ const config = {
             },
             replace: [' type="text/javascript"']
         }),
-        new CopyPlugin([
+        /*new CopyPlugin([
             {
                 from: 'src/img',
                 to: 'img'
@@ -65,7 +65,7 @@ const config = {
                 from: 'src/fonts',
                 to: 'fonts'
             },
-        ])
+        ])*/
     ],
     module: {
         rules: [
@@ -79,15 +79,21 @@ const config = {
             },
             {test: /\.pug$/, exclude: exclude_tmpl, use: ["pug-loader"]},
             {
-                test: /\.scss$/,
-                include: [
+                test: [/\.scss$/,/\.sass$/],
+                /*include: [
                     path.resolve(__dirname, 'node_modules/bootstrap/scss/'),
                     path.resolve(__dirname, 'node_modules/flag-icon-css/'),
                     path.resolve(__dirname, 'src/scss/'),
-                ],
+                ],*/
                 use: [
                     MiniCssExtractPlugin.loader,
+                    /*"style-loader",*/
                     "css-loader",
+                    {
+                        loader:"resolve-url-loader",
+                        options: {
+                          },
+                    },
                     "sass-loader",
                     { loader: 'sass-resources-loader',
                         options: {
@@ -95,6 +101,7 @@ const config = {
                             resources: 
                             [
                             path.resolve(__dirname, 'node_modules/compass-mixins/lib/_compass.scss'),
+                            path.resolve(__dirname, 'node_modules/compass-mixins/lib/scss.scss'),
                             ],
                             
                         }
@@ -107,20 +114,35 @@ const config = {
                         options: {
                             // you can specify a publicPath here
                             // by default it use publicPath in webpackOptions.output
-                            //publicPath: '/src/css/',
+                            publicPath: '/src/css/',
                             }
                     }, 
                     {   loader:'css-loader', options:{} }
                 ]
             },
-            {   test: /\.(woff2?|ttf|eot|svg)$/, 
+            /*{   test: /\.(woff2?|ttf|eot|svg)$/, 
                 loader: 'file-loader',
                 exclude: /node_modules/,
-                options: {name: 'assets/[name].[ext]'}},
+                options: {name: 'assets/[name].[ext]'}
+            },*/
             {
                 test: /\.svg$/,
                 loader: 'svg-url-loader'
-            }
+            },
+            {
+                test: /\.(png|jpg|gif|eot|ttf|woff|woff2)$/,
+                exclude: [
+                  
+                ],
+                use: {
+                  loader: 'file-loader',
+                  options: {
+                        name: '[name].[ext]',
+                        outputPath: '/assets',
+                        publicPath: '../../public/assets/'
+                  },
+                },
+              },
         ]
     }
 };

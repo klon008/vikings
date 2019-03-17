@@ -5,7 +5,8 @@ $topbar-background: #1e212a;
 $sidebar-background: #2d323e;
 
 #background{
-  background-image: url("/img/magazine.jpg");
+  background-image: url("../img/magazine.jpg");
+  
   background-size: cover;
   content : "";
   display: block;
