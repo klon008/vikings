@@ -113,17 +113,20 @@ nav#sidebar(data-simplebar)
               li
                 a Page2
         li
-          a(href='#lm_push').sidebar__rootlink
+          a(href='#lm_push').sidebar__rootlink.sidebar__rootlink__active
             i.material-icons-new.outline-mail.icon-white
             span.nav-link-title Оповещения
+            .nav-link-badge 25
         li
           a(href='#lm_clan_tasks').sidebar__rootlink
             i.material-icons-new.outline-mail.icon-white
             span.nav-link-title Задачи клана
+            .nav-link-badge(style="background-color: rgb(236, 12, 142);") 13
         li
           a(href='#lm_chat').sidebar__rootlink
             i.material-icons-new.outline-chat.icon-white
             span.nav-link-title Чат
+            .nav-link-badge(style="background-color: rgb(7, 156, 72);") 13
         li
           a(href='#lm_files').sidebar__rootlink
             i.material-icons-new.outline-folder.icon-white
@@ -136,6 +139,7 @@ nav#sidebar(data-simplebar)
           a(href='#lm_my_tasks').sidebar__rootlink
             i.material-icons-new.outline-check_box.icon-white
             span.nav-link-title Мои задачи
+            .nav-link-badge(style="background-color: rgb(255, 111, 0);") 3 
         li
           a(href='#lm_voiting').sidebar__rootlink
             i.material-icons-new.outline-insert_chart.icon-white
@@ -147,6 +151,7 @@ nav#sidebar(data-simplebar)
           a(href='#lm_passwords' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
             i.material-icons-new.outline-lock.icon-white
             span.nav-link-title Пароли и логины
+            .nav-link-badge(style="background-color: rgb(82, 94, 138);") 10
             i.material-icons.arrow keyboard_arrow_right
           ul#lm_passwords.collapse.list-unstyled.sidebar__expanded
             .sidebar__list

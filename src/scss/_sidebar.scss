@@ -140,8 +140,25 @@
         width: 16px;
         font-size: 14px;
     }
+    & .nav-link-badge{
+        margin-left: auto;
+        &+.material-icons, &+.material-icons-new{
+            margin-left: 5px;
+        }
+    }
 }
-
+.sidebar__rootlink__active{
+    background-color: #039be5;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    &:hover{
+        background-color:darken(#039be5, 10%);
+    }
+    & .nav-link-badge {
+        background-color: #ffffff;
+        color: $sidebar-background;
+    }
+}
 .resources-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
