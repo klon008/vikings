@@ -1,11 +1,10 @@
 header
     .navbar.navbar-dark.bg-dark-m.shadow-sm
         .container-fluid.topbar-flex
-            .row
                 .topbar-left
-                    a.logo(href='https://vikings.life')
+                    a.logo(href='/')
                         img(src='https://vikings.life/wp-content/uploads/2019/02/cropped-Zero-1.png' style='height: 24px; margin-bottom: 2px;')
-                    a.logo__sitename(href='https://vikings.life')
+                    a.logo__sitename(href='/')
                         span.header_logo_text Название сайта
                     button.navbar-toggler.button-menu-mobile.waves-effect.waves-light.rgba-white-slight(type='button' aria-label='Toggle navigation')
                         span.md.md-menu
@@ -17,7 +16,7 @@ header
                     include _countdown
                 form.form-inline(_lpchecked='1')
                     input.form-control.navbar__search(type='text' placeholder='Найти на сайте')
-                .infostatususers.d-none.d-xl-flex
+                .infostatususers
                     .usersonlain
                         i.usersico__dot.usersico__dot__online
                         | Пользователей онлайн:
@@ -35,7 +34,7 @@ header
                         span Создать объявление
                 
                 .topbar__right__buttons
-                    button(type="button").btn.no-outline.text-light.waves-effect.waves-light
+                    button(type="button").btn.no-outline.text-light.waves-effect.waves-light#add_to_fav
                         i.far.fa-heart
                     button(type="button").btn.no-outline.text-light.waves-effect.waves-light
                         i.fas.fa-shopping-cart
@@ -57,7 +56,7 @@ header
                     div.dropdown.hidden-xs.open
                         button.btn.no-outline.text-light.waves-effect.waves-light(data-toggle='dropdown' aria-expanded='true')
                             i.icon-settings
-                        ul.dropdown-menu.dropdown-menu__right.dropdown-menu__undark
+                        div.dropdown-menu.dropdown-menu__right.dropdown-menu__undark
                             li
                                 a(href='/site/profile')
                                     i.ti-user.m-r-10.text-custom

@@ -1,8 +1,9 @@
 $top-bar-height: 53px;
 $left-bar-width: 240px;
-$left-bar-padding: 30px;
+$left-bar-padding: 10px;
 $topbar-background: #1e212a;
 $sidebar-background: #2d323e;
+$main-font-color: #ffffff;
 
 #background{
   background-image: url("../img/magazine.jpg");
@@ -28,6 +29,7 @@ body{
 
 @import "./fonts/_fonts";
 @import "./_icons";
+@import "./material-icons-outline/_outline";
 @import "./_waves";
 @import "./_countdown";
 @import "./_topbar";
@@ -55,4 +57,12 @@ body{
     }
     padding: 3px 20px;
   }
+}
+.tooltip.bs-tooltip-auto[x-placement^=right] .arrow::before, .tooltip.bs-tooltip-right .arrow::before {
+  border-width: 5px 5px 5px 0;
+  border-right-color: lighten(black, 10%);
+}
+.tooltip-inner {
+  border-right-color: lighten(black, 10%);
+  border-radius: .25rem;
 }

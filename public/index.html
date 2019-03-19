@@ -10,53 +10,51 @@
 	<header>
 		<div class="navbar navbar-dark bg-dark-m shadow-sm">
 			<div class="container-fluid topbar-flex">
-				<div class="row">
-					<div class="topbar-left"><a class="logo" href="https://vikings.life"><img src="https://vikings.life/wp-content/uploads/2019/02/cropped-Zero-1.png" style="height: 24px; margin-bottom: 2px;"></a><a class="logo__sitename" href="https://vikings.life"><span class="header_logo_text">Название сайта</span></a><button class="navbar-toggler button-menu-mobile waves-effect waves-light rgba-white-slight" type="button" aria-label="Toggle navigation"><span class="md md-menu"></span></button></div>
-					<div class="counter">
-						<div class="counter_label">Общее число посетителей сайта</div>
-						<div class="countdown">
-							<div class="bloc-time hours" data-init-value="24">
-								<div class="figure hours hours-1"><span class="top">2</span><span class="top-back"><span>2</span></span><span class="bottom">2</span><span class="bottom-back"><span>2</span></span></div>
-								<div class="figure hours hours-2"><span class="top">4</span><span class="top-back"><span>4</span></span><span class="bottom">4</span><span class="bottom-back"><span>4</span></span></div>
-							</div>
-							<div class="bloc-time min" data-init-value="0">
-								<div class="figure min min-1"><span class="top">0</span><span class="top-back"><span>0</span></span><span class="bottom">0</span><span class="bottom-back"><span>0</span></span></div>
-								<div class="figure min min-2"><span class="top">0</span><span class="top-back"><span>0</span></span><span class="bottom">0</span><span class="bottom-back"><span>0</span></span></div>
-							</div>
-							<div class="bloc-time sec" data-init-value="0">
-								<div class="figure sec sec-1"><span class="top">0</span><span class="top-back"><span>0</span></span><span class="bottom">0</span><span class="bottom-back"><span>0</span></span></div>
-								<div class="figure sec sec-2"><span class="top">0</span><span class="top-back"><span>0</span></span><span class="bottom">0</span><span class="bottom-back"><span>0</span></span></div>
-							</div>
+				<div class="topbar-left"><a class="logo" href="/"><img src="https://vikings.life/wp-content/uploads/2019/02/cropped-Zero-1.png" style="height: 24px; margin-bottom: 2px;"></a><a class="logo__sitename" href="/"><span class="header_logo_text">Название сайта</span></a><button class="navbar-toggler button-menu-mobile waves-effect waves-light rgba-white-slight" type="button" aria-label="Toggle navigation"><span class="md md-menu"></span></button></div>
+				<div class="counter">
+					<div class="counter_label">Общее число посетителей сайта</div>
+					<div class="countdown">
+						<div class="bloc-time hours" data-init-value="24">
+							<div class="figure hours hours-1"><span class="top">2</span><span class="top-back"><span>2</span></span><span class="bottom">2</span><span class="bottom-back"><span>2</span></span></div>
+							<div class="figure hours hours-2"><span class="top">4</span><span class="top-back"><span>4</span></span><span class="bottom">4</span><span class="bottom-back"><span>4</span></span></div>
+						</div>
+						<div class="bloc-time min" data-init-value="0">
+							<div class="figure min min-1"><span class="top">0</span><span class="top-back"><span>0</span></span><span class="bottom">0</span><span class="bottom-back"><span>0</span></span></div>
+							<div class="figure min min-2"><span class="top">0</span><span class="top-back"><span>0</span></span><span class="bottom">0</span><span class="bottom-back"><span>0</span></span></div>
+						</div>
+						<div class="bloc-time sec" data-init-value="0">
+							<div class="figure sec sec-1"><span class="top">0</span><span class="top-back"><span>0</span></span><span class="bottom">0</span><span class="bottom-back"><span>0</span></span></div>
+							<div class="figure sec sec-2"><span class="top">0</span><span class="top-back"><span>0</span></span><span class="bottom">0</span><span class="bottom-back"><span>0</span></span></div>
 						</div>
 					</div>
-					<form class="form-inline" _lpchecked="1"><input class="form-control navbar__search" type="text" placeholder="Найти на сайте"></form>
-					<div class="infostatususers d-none d-xl-flex">
-						<div class="usersonlain"><i class="usersico__dot usersico__dot__online"></i>Пользователей онлайн:<span class="kolichonlaininteger"><a href="https://vikings.life/useronline"><strong>1325</strong></a></span></div>
-						<div class="lastzakaztime"><i class="usersico__dot usersico__dot__ordercount"></i>Последний заказ:<span class="timemunutlast">1 минуту назад</span></div>
+				</div>
+				<form class="form-inline" _lpchecked="1"><input class="form-control navbar__search" type="text" placeholder="Найти на сайте"></form>
+				<div class="infostatususers">
+					<div class="usersonlain"><i class="usersico__dot usersico__dot__online"></i>Пользователей онлайн:<span class="kolichonlaininteger"><a href="https://vikings.life/useronline"><strong>1325</strong></a></span></div>
+					<div class="lastzakaztime"><i class="usersico__dot usersico__dot__ordercount"></i>Последний заказ:<span class="timemunutlast">1 минуту назад</span></div>
+				</div>
+				<div class="topbar__buttons"><button class="btn btn-primary"><span>Просмотр объявлений</span></button><button class="btn btn-warning"><span>Создать объявление</span></button></div>
+				<div class="topbar__right__buttons"><button class="btn no-outline text-light waves-effect waves-light" type="button" id="add_to_fav"><i class="far fa-heart"></i></button><button class="btn no-outline text-light waves-effect waves-light" type="button"><i class="fas fa-shopping-cart"></i></button>
+					<div class="dropdown hidden-xs open"><button class="btn no-outline text-light waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><i class="fas fa-language"></i></button>
+						<ul class="dropdown-menu dropdown-menu__right dropdown-menu__undark">
+							<li><a href="/rus"><i class="flag-icon flag-icon-ru"></i> Русский</a></li>
+							<li class="divider"></li>
+							<li><a href="/english"><i class="flag-icon flag-icon-us"></i> English US</a></li>
+						</ul>
 					</div>
-					<div class="topbar__buttons"><button class="btn btn-primary"><span>Просмотр объявлений</span></button><button class="btn btn-warning"><span>Создать объявление</span></button></div>
-					<div class="topbar__right__buttons"><button class="btn no-outline text-light waves-effect waves-light" type="button"><i class="far fa-heart"></i></button><button class="btn no-outline text-light waves-effect waves-light" type="button"><i class="fas fa-shopping-cart"></i></button>
-						<div class="dropdown hidden-xs open"><button class="btn no-outline text-light waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><i class="fas fa-language"></i></button>
-							<ul class="dropdown-menu dropdown-menu__right dropdown-menu__undark">
-								<li><a href="/rus"><i class="flag-icon flag-icon-ru"></i> Русский</a></li>
-								<li class="divider"></li>
-								<li><a href="/english"><i class="flag-icon flag-icon-us"></i> English US</a></li>
-							</ul>
+					<div class="dropdown hidden-xs open"><button class="btn no-outline text-light waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><i class="icon-settings"></i></button>
+						<div class="dropdown-menu dropdown-menu__right dropdown-menu__undark">
+							<li><a href="/site/profile"><i class="ti-user m-r-10 text-custom"></i> Профиль</a></li>
+							<li class="divider"></li>
+							<li><a href="/logout"><i class="ti-power-off m-r-10 text-danger"></i> Выход</a></li>
 						</div>
-						<div class="dropdown hidden-xs open"><button class="btn no-outline text-light waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><i class="icon-settings"></i></button>
-							<ul class="dropdown-menu dropdown-menu__right dropdown-menu__undark">
-								<li><a href="/site/profile"><i class="ti-user m-r-10 text-custom"></i> Профиль</a></li>
-								<li class="divider"></li>
-								<li><a href="/logout"><i class="ti-power-off m-r-10 text-danger"></i> Выход</a></li>
-							</ul>
-						</div><button class="btn no-outline text-light waves-effect waves-light right-element" type="button"><i class="far fa-comment-alt"></i></button>
-					</div>
+					</div><button class="btn no-outline text-light waves-effect waves-light right-element" type="button"><i class="far fa-comment-alt"></i></button>
 				</div>
 			</div>
 		</div>
 	</header>
 	<div class="wrapper">
-		<nav id="sidebar">
+		<nav id="sidebar" data-simplebar>
 			<div class="sidebar__header">
 				<div class="sidebar__user">
 					<h3 class="sidebar__username">Charlie Adams</h3><p class="sidebar__useremail">adams.charlie@mail.com</p>
@@ -64,29 +62,315 @@
 				<div class="sidebar__usericon"><img class="sidebar__avatar" src="https://kwork.ru/files/avatar/large/30/24862-2.jpg"></div>
 			</div>
 			<div class="sidebar__content">
-				<ul class="list-unstyled components">
-					<li class="active"><a class="dropdown-toggle" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
-						<ul class="collapse list-unstyled" id="homeSubmenu">
-							<li><a href="#">Home 1</a></li>
-							<li><a href="#">Home 2</a></li>
-							<li><a href="#">Home 3</a></li>
-						</ul>
-					</li>
-					<li><a href="#">About</a></li>
-					<li><a class="dropdown-toggle" href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
-						<ul class="collapse list-unstyled" id="pageSubmenu">
-							<li><a href="#">Page 1</a></li>
-							<li><a href="#">Page 2</a></li>
-							<li><a href="#">Page 3</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Portfolio</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
+				<div class="vertical-menu-block">
+					<div class="group-title"><span>Статистика по ресурсам</span></div>
+					<ul class="list-unstyled components">
+						<li><a class="sidebar__rootlink" href="#lm_resources_expended" data-toggle="collapse" aria-expanded="false"><i class="material-icons-new outline-dashboard icon-white"></i><span class="nav-link-title">Затрачено ресурсов</span><i class="material-icons arrow">keyboard_arrow_right</i></a>
+							<ul class="collapse list-unstyled sidebar__expanded" id="lm_resources_expended">
+								<div class="resources-grid">
+									<div class="resources-grid__item" data-toggle="tooltip" title="Бронза"><img class="resources-grid__img" src="../assets/Бронза.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Дерево"><img class="resources-grid__img" src="../assets/Дерево.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Еда"><img class="resources-grid__img" src="../assets/Еда.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Железо"><img class="resources-grid__img" src="../assets/Железо.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Золото"><img class="resources-grid__img" src="../assets/Золото.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Камень"><img class="resources-grid__img" src="../assets/Камень.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Манускрипт"><img class="resources-grid__img" src="../assets/Манускрипт.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Могущество"><img class="resources-grid__img" src="../assets/Могущество.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Оберег Большого Багги"><img class="resources-grid__img" src="../assets/Оберег Большого Багги.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Обсидиан"><img class="resources-grid__img" src="../assets/Обсидиан.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Опыт героя"><img class="resources-grid__img" src="../assets/Опыт героя.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Опыт шамана"><img class="resources-grid__img" src="../assets/Опыт шамана.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Осколок души"><img class="resources-grid__img" src="../assets/Осколок души.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="очки VIP"><img class="resources-grid__img" src="../assets/очки VIP.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Самородок"><img class="resources-grid__img" src="../assets/Самородок.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Свитки"><img class="resources-grid__img" src="../assets/Свитки.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Серебро"><img class="resources-grid__img" src="../assets/Серебро.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Тотемы"><img class="resources-grid__img" src="../assets/Тотемы.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Уголь"><img class="resources-grid__img" src="../assets/Уголь.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Ускорители"><img class="resources-grid__img" src="../assets/Ускорители.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Чертежи воителя"><img class="resources-grid__img" src="../assets/Чертежи воителя.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Элексир героя"><img class="resources-grid__img" src="../assets/Элексир героя.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Элексир шамана"><img class="resources-grid__img" src="../assets/Элексир шамана.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+								</div>
+							</ul>
+						</li>
+						<li><a class="sidebar__rootlink" href="#lm_resources_upgr_expended" data-toggle="collapse" aria-expanded="false"><i class="material-icons-new outline-today icon-white"></i><span class="nav-link-title">Ресурсы для апгрейда</span><i class="material-icons arrow">keyboard_arrow_right</i></a>
+							<ul class="collapse list-unstyled sidebar__expanded" id="lm_resources_upgr_expended">
+								<div class="resources-grid">
+									<div class="resources-grid__item" data-toggle="tooltip" title="Бронза"><img class="resources-grid__img" src="../assets/Бронза.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Дерево"><img class="resources-grid__img" src="../assets/Дерево.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Еда"><img class="resources-grid__img" src="../assets/Еда.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Железо"><img class="resources-grid__img" src="../assets/Железо.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Золото"><img class="resources-grid__img" src="../assets/Золото.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Камень"><img class="resources-grid__img" src="../assets/Камень.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Манускрипт"><img class="resources-grid__img" src="../assets/Манускрипт.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Могущество"><img class="resources-grid__img" src="../assets/Могущество.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Оберег Большого Багги"><img class="resources-grid__img" src="../assets/Оберег Большого Багги.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Обсидиан"><img class="resources-grid__img" src="../assets/Обсидиан.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Опыт героя"><img class="resources-grid__img" src="../assets/Опыт героя.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Опыт шамана"><img class="resources-grid__img" src="../assets/Опыт шамана.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Осколок души"><img class="resources-grid__img" src="../assets/Осколок души.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="очки VIP"><img class="resources-grid__img" src="../assets/очки VIP.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Самородок"><img class="resources-grid__img" src="../assets/Самородок.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Свитки"><img class="resources-grid__img" src="../assets/Свитки.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Серебро"><img class="resources-grid__img" src="../assets/Серебро.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Тотемы"><img class="resources-grid__img" src="../assets/Тотемы.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Уголь"><img class="resources-grid__img" src="../assets/Уголь.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Ускорители"><img class="resources-grid__img" src="../assets/Ускорители.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Чертежи воителя"><img class="resources-grid__img" src="../assets/Чертежи воителя.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Элексир героя"><img class="resources-grid__img" src="../assets/Элексир героя.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Элексир шамана"><img class="resources-grid__img" src="../assets/Элексир шамана.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+								</div>
+							</ul>
+						</li>
+						<li><a class="sidebar__rootlink" href="#lm_resources_left" data-toggle="collapse" aria-expanded="false"><i class="material-icons-new outline-shopping_cart icon-white"></i><span class="nav-link-title">Осталось собрать</span><i class="material-icons arrow">keyboard_arrow_right</i></a>
+							<ul class="collapse list-unstyled sidebar__expanded" id="lm_resources_left">
+								<div class="resources-grid">
+									<div class="resources-grid__item" data-toggle="tooltip" title="Бронза"><img class="resources-grid__img" src="../assets/Бронза.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Дерево"><img class="resources-grid__img" src="../assets/Дерево.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Еда"><img class="resources-grid__img" src="../assets/Еда.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Железо"><img class="resources-grid__img" src="../assets/Железо.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Золото"><img class="resources-grid__img" src="../assets/Золото.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Камень"><img class="resources-grid__img" src="../assets/Камень.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Манускрипт"><img class="resources-grid__img" src="../assets/Манускрипт.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Могущество"><img class="resources-grid__img" src="../assets/Могущество.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Оберег Большого Багги"><img class="resources-grid__img" src="../assets/Оберег Большого Багги.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Обсидиан"><img class="resources-grid__img" src="../assets/Обсидиан.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Опыт героя"><img class="resources-grid__img" src="../assets/Опыт героя.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Опыт шамана"><img class="resources-grid__img" src="../assets/Опыт шамана.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Осколок души"><img class="resources-grid__img" src="../assets/Осколок души.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="очки VIP"><img class="resources-grid__img" src="../assets/очки VIP.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Самородок"><img class="resources-grid__img" src="../assets/Самородок.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Свитки"><img class="resources-grid__img" src="../assets/Свитки.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Серебро"><img class="resources-grid__img" src="../assets/Серебро.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Тотемы"><img class="resources-grid__img" src="../assets/Тотемы.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Уголь"><img class="resources-grid__img" src="../assets/Уголь.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Ускорители"><img class="resources-grid__img" src="../assets/Ускорители.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Чертежи воителя"><img class="resources-grid__img" src="../assets/Чертежи воителя.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Элексир героя"><img class="resources-grid__img" src="../assets/Элексир героя.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+									<div class="resources-grid__item" data-toggle="tooltip" title="Элексир шамана"><img class="resources-grid__img" src="../assets/Элексир шамана.png">
+										<div class="resources-grid__title" style="color:#e4a62b">7.78(b)</div>
+									</div>
+								</div>
+							</ul>
+						</li>
+					</ul>
+					<div class="group-title"><span>Приложения</span></div>
+					<ul class="list-unstyled components">
+						<li><a class="sidebar__rootlink" href="#lm_user_config" data-toggle="collapse" aria-expanded="false"><i class="material-icons-new outline-person icon-white"></i><span class="nav-link-title">Мой профиль</span><i class="material-icons arrow">keyboard_arrow_right</i></a>
+							<ul class="collapse list-unstyled sidebar__expanded" id="lm_user_config">
+								<div class="sidebar__list">
+									<li><a>Page1</a></li>
+									<li><a>Page2</a></li>
+								</div>
+							</ul>
+						</li>
+						<li><a class="sidebar__rootlink" href="#lm_user_cities" data-toggle="collapse" aria-expanded="false"><i class="material-icons-new outline-location_city icon-white"></i><span class="nav-link-title">Мои города</span><i class="material-icons arrow">keyboard_arrow_right</i></a>
+							<ul class="collapse list-unstyled sidebar__expanded" id="lm_user_cities">
+								<div class="sidebar__list">
+									<li><a>Page1</a></li>
+									<li><a>Page2</a></li>
+								</div>
+							</ul>
+						</li>
+						<li><a class="sidebar__rootlink" href="#lm_user_clans" data-toggle="collapse" aria-expanded="false"><i class="material-icons-new outline-group icon-white"></i><span class="nav-link-title">Мои кланы</span><i class="material-icons arrow">keyboard_arrow_right</i></a>
+							<ul class="collapse list-unstyled sidebar__expanded" id="lm_user_clans">
+								<div class="sidebar__list">
+									<li><a>Page1</a></li>
+									<li><a>Page2</a></li>
+								</div>
+							</ul>
+						</li>
+						<li><a class="sidebar__rootlink" href="#lm_clans_list" data-toggle="collapse" aria-expanded="false"><i class="material-icons-new outline-group icon-white"></i><span class="nav-link-title">Список кланов</span><i class="material-icons arrow">keyboard_arrow_right</i></a>
+							<ul class="collapse list-unstyled sidebar__expanded" id="lm_clans_list">
+								<div class="sidebar__list">
+									<li><a>Page1</a></li>
+									<li><a>Page2</a></li>
+								</div>
+							</ul>
+						</li>
+						<li><a class="sidebar__rootlink" href="#lm_special_facilities" data-toggle="collapse" aria-expanded="false"><i class="material-icons-new outline-layers icon-white"></i><span class="nav-link-title">Специальные возможности</span><i class="material-icons arrow">keyboard_arrow_right</i></a>
+							<ul class="collapse list-unstyled sidebar__expanded" id="lm_special_facilities">
+								<div class="sidebar__list">
+									<li><a>Page1</a></li>
+									<li><a>Page2</a></li>
+								</div>
+							</ul>
+						</li>
+						<li><a class="sidebar__rootlink" href="#lm_academy"><i class="material-icons-new outline-school icon-white"></i><span class="nav-link-title">Академия</span></a></li>
+						<li><a class="sidebar__rootlink" href="#lm_calendar"><i class="material-icons-new outline-today icon-white"></i><span class="nav-link-title">Календарь</span></a></li>
+						<li><a class="sidebar__rootlink" href="#lm_my_purchases" data-toggle="collapse" aria-expanded="false"><i class="material-icons-new outline-shopping_cart icon-white"></i><span class="nav-link-title">Мои покупки</span><i class="material-icons arrow">keyboard_arrow_right</i></a>
+							<ul class="collapse list-unstyled sidebar__expanded" id="lm_my_purchases">
+								<div class="sidebar__list">
+									<li><a>Page1</a></li>
+									<li><a>Page2</a></li>
+								</div>
+							</ul>
+						</li>
+						<li><a class="sidebar__rootlink" href="#lm_push"><i class="material-icons-new outline-mail icon-white"></i><span class="nav-link-title">Оповещения</span></a></li>
+						<li><a class="sidebar__rootlink" href="#lm_clan_tasks"><i class="material-icons-new outline-mail icon-white"></i><span class="nav-link-title">Задачи клана</span></a></li>
+						<li><a class="sidebar__rootlink" href="#lm_chat"><i class="material-icons-new outline-chat icon-white"></i><span class="nav-link-title">Чат</span></a></li>
+						<li><a class="sidebar__rootlink" href="#lm_files"><i class="material-icons-new outline-folder icon-white"></i><span class="nav-link-title">Мои файлы</span></a></li>
+						<li><a class="sidebar__rootlink" href="#lm_contacts"><i class="material-icons-new outline-account_box icon-white"></i><span class="nav-link-title">Контакты</span></a></li>
+						<li><a class="sidebar__rootlink" href="#lm_my_tasks"><i class="material-icons-new outline-check_box icon-white"></i><span class="nav-link-title">Мои задачи</span></a></li>
+						<li><a class="sidebar__rootlink" href="#lm_voiting"><i class="material-icons-new outline-insert_chart icon-white"></i><span class="nav-link-title">Голосование</span></a></li>
+					</ul>
+					<div class="group-title"><span>Дополнительно</span></div>
+					<ul class="list-unstyled components">
+						<li><a class="sidebar__rootlink" href="#lm_passwords" data-toggle="collapse" aria-expanded="false"><i class="material-icons-new outline-lock icon-white"></i><span class="nav-link-title">Пароли и логины</span><i class="material-icons arrow">keyboard_arrow_right</i></a>
+							<ul class="collapse list-unstyled sidebar__expanded" id="lm_passwords">
+								<div class="sidebar__list">
+									<li><a>Page1</a></li>
+									<li><a>Page2</a></li>
+								</div>
+							</ul>
+						</li>
+						<li><a class="sidebar__rootlink" href="#lm_reminder"><i class="material-icons-new outline-access_alarm icon-white"></i><span class="nav-link-title">Напоминание</span></a></li>
+						<li><a class="sidebar__rootlink" href="#lm_faq"><i class="material-icons">help</i><span class="nav-link-title">F.A.Q</span></a></li>
+						<li><a class="sidebar__rootlink" href="#lm_newspaper"><i class="material-icons-new outline-import_contacts icon-white"></i><span class="nav-link-title">Газета</span></a></li>
+					</ul>
+				</div>
 			</div>
 		</nav>
 	</div>
 	<div id="background"></div>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://storage.googleapis.com/non-spec-apps/mio-icons/latest/outline.css">
 	<script src="js/build.js"></script>
 </body>

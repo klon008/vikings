@@ -1,19 +1,11 @@
 .navbar{
   height: $top-bar-height;
   padding: 0;
-  & .row{
-    width: 100%;
-    margin-right: 0px;
-    margin-left: 0px;
-    & .right-element{
-      background-color: lighten($topbar-background, 10%);
-    }
-    &>*{
-      margin-right: 0.6em;
-      &:last-child{
-        margin-right: 0;
-      }
-    }
+  width: 100%;
+  margin-right: 0px;
+  margin-left: 0px;
+  & .right-element{
+    background-color: lighten($topbar-background, 10%);
   }
   &.navbar-dark{
     color: rgba(255,255,255,.7);
@@ -26,11 +18,17 @@
   }
   &>.container-fluid{
     padding: 0;
-  }
-  &>.container-fluid>.row{
     flex-wrap: nowrap;
+    &>*{
+      margin-right: 0.6em;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
   }
-  
+  .form-inline{
+    margin-left: 0.6em;
+  }
 }
 
 .navbar-toggler{
@@ -51,12 +49,19 @@
   align-items: stretch;
 }
 .navbar > .container-fluid.topbar-flex{
-  max-height: $top-bar-height;
+  padding-left: $left-bar-width;
+  height: 100%;
 }
 
 .infostatususers{
+  @media (max-width: 1200px) {
+    &{
+      display: none !important;
+    }
+  }
   font-size: 0.75em;
-  height:100%;
+  box-sizing: content-box;
+  height:auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,13 +89,17 @@
   margin-right: 0.45em;
 }
 .topbar-left{
-  width: $left-bar-width;
+  left: 0;
+  top:0;
+  position: fixed;
+  min-width: $left-bar-width;
   display: flex;
   align-items: stretch;
   justify-content: space-between;
+  background-color: $topbar-background;
 
 }
-.navbar .row .topbar-left{
+.navbar .topbar-left{
   margin-right: 0;
   padding-left: $left-bar-padding;
 }

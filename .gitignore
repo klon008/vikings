@@ -167,3 +167,4 @@ fabric.properties
 my_sources/
 cached_uglify/
 .idea/
+.vscode/
