@@ -7,7 +7,7 @@ header
                     a.logo__sitename(href='/')
                         span.header_logo_text Название сайта
                     button.navbar-toggler.button-menu-mobile.waves-effect.waves-light.rgba-white-slight(type='button' aria-label='Toggle navigation')
-                        span.md.md-menu
+                        span.material-icons-new.outline-menu.icon-white
 
 
                 div.counter
@@ -35,9 +35,10 @@ header
                 
                 .topbar__right__buttons
                     button(type="button").btn.no-outline.text-light.waves-effect.waves-light#add_to_fav
-                        i.far.fa-heart
+                        i.eq.eq-heart
                     button(type="button").btn.no-outline.text-light.waves-effect.waves-light
-                        i.fas.fa-shopping-cart
+                        //i.fas.fa-shopping-cart
+                        i.material-icons-new.outline-shopping_cart.icon-white
 
                     div.dropdown.hidden-xs.open
                         button.btn.no-outline.text-light.waves-effect.waves-light(data-toggle='dropdown' aria-expanded='true')
@@ -55,16 +56,16 @@ header
 
                     div.dropdown.hidden-xs.open
                         button.btn.no-outline.text-light.waves-effect.waves-light(data-toggle='dropdown' aria-expanded='true')
-                            i.icon-settings
+                            i.eq.eq-setting
                         div.dropdown-menu.dropdown-menu__right.dropdown-menu__undark
                             li
                                 a(href='/site/profile')
-                                    i.ti-user.m-r-10.text-custom
+                                    i.far.fa-user
                                     |  Профиль
                             li.divider
                             li
                                 a(href='/logout')
-                                    i.ti-power-off.m-r-10.text-danger
+                                    i.fas.fa-power-off.text-danger
                                     |  Выход
 
                     button(type="button").btn.no-outline.text-light.waves-effect.waves-light.right-element

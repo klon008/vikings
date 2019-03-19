@@ -4,11 +4,14 @@ const srcDir = path.join(__dirname, 'src');
 const outDir = path.join(__dirname, 'public');
 const UglifyJsPlugin = require('webpack-uglify-js-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlBeautifyPlugin = require('html-beautify-webpack-plugin');
+// const HtmlBeautifyPlugin = require('html-beautify-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const exclude_tmpl = /(node_modules|bower_components|cached_uglify|undr|my_sources)/;
-const CopyPlugin = require('copy-webpack-plugin');
+// const CopyPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const devMode = process.env.NODE_ENV !== 'production'
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = {
     mode: 'development',
@@ -25,45 +28,28 @@ const config = {
         ignored: /node_modules/,
     },
     devServer: {
-        contentBase: path.join(__dirname, 'public'),
+        //contentBase: path.join(__dirname, 'src'),
         port: 3000,
         compress: true,
-        disableHostCheck: true,
         hot: true,
-        lazy: true
     },
     devtool: "cheap-inline-module-source-map",
     plugins: [
+        //new BundleAnalyzerPlugin(),
         new webpack.ProvidePlugin({
             $: "jquery/dist/jquery.min.js",
             jQuery: "jquery/dist/jquery.min.js",
-            "window.jQuery": "jquery/dist/jquery.min.js"
+            "window.jQuery": "jquery/dist/jquery.min.js",
         }),
         new MiniCssExtractPlugin({
-            filename: "css/[name].css",
-            chunkFilename: "css/[id].css"
+            filename: "[name].css",
+            chunkFilename: "[id].css"
         }),
         new HtmlWebpackPlugin({
-            template: './src/index.pug'
+            template: path.join(__dirname, 'src', 'index.pug')
         }),
-        new HtmlBeautifyPlugin({
-            config: {
-                html: {
-                    end_with_newline: true,
-                    indent_size: 2,
-                    indent_with_tabs: true,
-                    indent_inner_html: true,
-                    preserve_newlines: true,
-                    unformatted: ['p', 'i', 'b', 'span']
-                }
-            },
-            replace: [' type="text/javascript"']
-        }),
-        // new CopyPlugin([
-        //     { from: 'src/favicons/', to: 'public' },
-        //   ]),
         new FaviconsWebpackPlugin({
-            logo:'./src/img/logo.png',
+            logo: './src/img/logo.png',
             prefix: 'icons-',
             statsFilename: 'iconstats.json',
         })
@@ -71,14 +57,24 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.m?js$/, exclude: exclude_tmpl, use: {
-                    loader: 'babel-loader', options: {
+                test: /\.m?js$/,
+                exclude: exclude_tmpl,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
                         presets: ['@babel/preset-env'],
                         plugins: ['@babel/plugin-transform-runtime']
                     }
                 }
             },
-            {test: /\.pug$/, exclude: exclude_tmpl, use: ["pug-loader"]},
+            {
+                test: /\.pug$/,
+                exclude: exclude_tmpl,
+                loader: "pug-loader",
+                options: {
+                    pretty: true
+                }
+            },
             {
                 test: [/\.scss$/, /\.sass$/],
                 include: [
@@ -88,17 +84,13 @@ const config = {
                     path.resolve(__dirname, 'src/scss/'),
                 ],
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    /*
-                    "style-loader", 
-                    для стайлоладера я неправильно загружаю
-                    */
+                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     "css-loader",
                     {
                         loader: "resolve-url-loader",
                         options: {
                             outputPath: 'assets',
-                            publicPath: 'assets'
+                            publicPath: '../public'
                         },
                     },
                     "sass-loader",
@@ -106,26 +98,27 @@ const config = {
                         loader: 'sass-resources-loader',
                         options: {
                             sourceMap: true,
-                            resources:
-                                [
-                                    path.resolve(__dirname, 'node_modules/compass-mixins/lib/_compass.scss'),
-                                    path.resolve(__dirname, 'node_modules/compass-mixins/lib/scss.scss'),
-                                ],
+                            resources: [
+                                path.resolve(__dirname, 'node_modules/compass-mixins/lib/_compass.scss'),
+                                path.resolve(__dirname, 'node_modules/compass-mixins/lib/scss.scss'),
+                            ],
 
                         }
-                    }]
+                    }
+                ]
             },
             {
-                test: /\.css$/, use: [
-                    {
+                test: /\.css$/,
+                use: [{
                         loader: MiniCssExtractPlugin.loader,
                         options: {
-                            // you can specify a publicPath here
-                            // by default it use publicPath in webpackOptions.output
-                            publicPath: '/src/css/',
+                            publicPath: '../public',
                         }
                     },
-                    {loader: 'css-loader', options: {}}
+                    {
+                        loader: 'css-loader',
+                        options: {}
+                    }
                 ]
             },
             {
@@ -140,7 +133,7 @@ const config = {
                     options: {
                         name: '[name].[ext]',
                         outputPath: 'assets',
-                        publicPath: '../assets'
+                        publicPath: './assets'
                     },
                 },
             },
@@ -157,18 +150,23 @@ module.exports = (env, argv) => {
 
         config.devtool = false;
         config.optimization = {
-            minimizer: [new UglifyJsPlugin({
-                cacheFolder: path.resolve(__dirname, 'cached_uglify/'),
-                debug: true,
-                minimize: true,
-                sourceMap: false,
-                output: {
-                    comments: false
-                },
-                compressor: {
-                    warnings: false
-                }
-            })]
+            minimizer: [
+                new UglifyJsPlugin({
+                    cacheFolder: path.resolve(__dirname, 'cached_uglify/'),
+                    comments: false,
+                    minimize: true,
+                    compress: {
+                        sequences     : true,
+                        booleans      : true,
+                        loops         : true,
+                        unused      : true,
+                        warnings    : false,
+                        drop_console: true,
+                        unsafe      : true
+                    }
+                }),
+                new OptimizeCSSAssetsPlugin({})
+            ]
         }
     }
 

@@ -15,6 +15,7 @@
     }
     .nav-link-title{
         text-transform: none;
+        line-height: 1;
     }
 }
 
@@ -132,6 +133,9 @@
         }
     }
     & .material-icons-new, & .material-icons{
+        &.arrow{
+            
+        }
         height: 16px;
         width: 16px;
         font-size: 14px;

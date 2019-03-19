@@ -27,9 +27,8 @@ body{
   background-color: #3c434d;
 }
 
-@import "./fonts/_fonts";
-@import "./_icons";
-@import "./material-icons-outline/_outline";
+@import "./_fonts";
+// @import "./_icons";
 @import "./_waves";
 @import "./_countdown";
 @import "./_topbar";
@@ -66,3 +65,7 @@ body{
   border-right-color: lighten(black, 10%);
   border-radius: .25rem;
 }
+.btn{
+  line-height: 1;
+}
+@import "./_flags";

@@ -135,12 +135,14 @@
   display: flex;
   align-items: center;
   .btn{
-    padding:0 0.75rem;
+
     display: flex;
     align-items: center;
     @media (min-width: 1600px) {
       white-space: nowrap;  
     }
+    padding: 0.2rem 0.5rem;
+
   }
   &>*{
     min-height: 38px;
@@ -154,7 +156,14 @@
 
 .topbar__right__buttons{
   .btn{
+    padding:0.375rem 0.5rem;
     border-radius: 0;
+    i.material-icons, i.material-icons-new{
+      height:20px;
+    }
+    &.right-element{
+      padding:0.375rem 0.75rem;
+    }
   }
   display: flex;
   align-items: center;
