@@ -35,7 +35,7 @@ const config = {
     },
     devtool: "cheap-inline-module-source-map",
     plugins: [
-        //new BundleAnalyzerPlugin(),
+        new BundleAnalyzerPlugin(),
         new webpack.ProvidePlugin({
             $: "jquery/dist/jquery.min.js",
             jQuery: "jquery/dist/jquery.min.js",
@@ -55,8 +55,7 @@ const config = {
         })
     ],
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.m?js$/,
                 exclude: exclude_tmpl,
                 use: {
@@ -128,14 +127,39 @@ const config = {
             {
                 test: /\.(png|jpg|gif|eot|ttf|woff|woff2)$/,
                 exclude: [],
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: 'assets',
-                        publicPath: './assets'
+                use: [{
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'assets',
+                            publicPath: './assets'
+                        },
                     },
-                },
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 65
+                            },
+                            // optipng.enabled: false will disable optipng
+                            optipng: {
+                                enabled: false,
+                            },
+                            pngquant: {
+                                quality: '65-90',
+                                speed: 4
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            // the webp option will enable WEBP
+                            webp: {
+                                quality: 75
+                            }
+                        }
+                    }
+                ]
             },
         ]
     }
@@ -156,13 +180,13 @@ module.exports = (env, argv) => {
                     comments: false,
                     minimize: true,
                     compress: {
-                        sequences     : true,
-                        booleans      : true,
-                        loops         : true,
-                        unused      : true,
-                        warnings    : false,
+                        sequences: true,
+                        booleans: true,
+                        loops: true,
+                        unused: true,
+                        warnings: false,
                         drop_console: true,
-                        unsafe      : true
+                        unsafe: true
                     }
                 }),
                 new OptimizeCSSAssetsPlugin({})

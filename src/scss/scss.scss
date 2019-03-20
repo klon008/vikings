@@ -27,12 +27,11 @@ body{
   background-color: #3c434d;
 }
 
-@import "./_fonts";
-// @import "./_icons";
-@import "./_waves";
-@import "./_countdown";
-@import "./_topbar";
-@import "./_sidebar";
+@import "./fonts";
+@import "./waves";
+@import "./countdown";
+@import "./topbar";
+@import "./sidebar";
 .no-outline{
   &:focus {
     outline: none;
