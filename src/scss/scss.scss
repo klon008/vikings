@@ -102,7 +102,6 @@ footer {
   background-color: #1e2129!important;
   color: #ffffff !important;
   min-height: 40px;
-  height: 40px;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -110,13 +109,15 @@ footer {
   padding-right:$right-bar-width;
 }
 .footer-nav{
-  display: flex;
   flex-direction: row;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   font-stretch: normal;
-  justify-content: flex-end;
   height: 100%;
+  flex-wrap: wrap;
+  margin: auto 0;
+  justify-content: flex-end;
+  padding: 8px;
   & .footer-link{
     margin-right: 0.4em;
     &:not(:first-child):before{
