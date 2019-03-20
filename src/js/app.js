@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
     }
   })
-  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="tooltip"]').tooltip({container: 'body', boundary: 'window', paddingAbsolute: true});
   var instanceOverlay = OverlayScrollbars(document.getElementById('sidebar'), {
     overflowBehavior: {
       x: "hidden"
@@ -40,3 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 })
+var instanceOverlay = OverlayScrollbars(document.getElementById('right-side-chat'), {
+  overflowBehavior: {
+    x: "hidden"
+  },
+  scrollbars: {
+    autoHide: "leave"
+  }
+});

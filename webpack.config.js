@@ -12,6 +12,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const devMode = process.env.NODE_ENV !== 'production'
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+module.exports = [];
 
 const config = {
     mode: 'development',
@@ -28,14 +29,13 @@ const config = {
         ignored: /node_modules/,
     },
     devServer: {
-        //contentBase: path.join(__dirname, 'src'),
         port: 3000,
         compress: true,
         hot: true,
     },
     devtool: "cheap-inline-module-source-map",
     plugins: [
-        new BundleAnalyzerPlugin(),
+        //new BundleAnalyzerPlugin(),
         new webpack.ProvidePlugin({
             $: "jquery/dist/jquery.min.js",
             jQuery: "jquery/dist/jquery.min.js",
@@ -160,39 +160,41 @@ const config = {
                         }
                     }
                 ]
-            },
+            }
         ]
     }
 };
 
-module.exports = (env, argv) => {
-    if (argv.mode === 'development') {
-        config.devtool = 'cheap-inline-module-source-map';
+if (devMode) {
+    config.devtool = 'cheap-inline-module-source-map';
+}
+
+if (process.env.NODE_ENV === 'production') {
+
+    config.devtool = false;
+    config.optimization = {
+        minimizer: [
+            new UglifyJsPlugin({
+                cacheFolder: path.resolve(__dirname, 'cached_uglify/'),
+                comments: false,
+                minimize: true,
+                compress: {
+                    sequences: true,
+                    booleans: true,
+                    loops: true,
+                    unused: true,
+                    warnings: false,
+                    drop_console: true,
+                    unsafe: true
+                }
+            }),
+            new OptimizeCSSAssetsPlugin({})
+        ]
     }
+}
 
-    if (argv.mode === 'production') {
+module.exports.push( config );
 
-        config.devtool = false;
-        config.optimization = {
-            minimizer: [
-                new UglifyJsPlugin({
-                    cacheFolder: path.resolve(__dirname, 'cached_uglify/'),
-                    comments: false,
-                    minimize: true,
-                    compress: {
-                        sequences: true,
-                        booleans: true,
-                        loops: true,
-                        unused: true,
-                        warnings: false,
-                        drop_console: true,
-                        unsafe: true
-                    }
-                }),
-                new OptimizeCSSAssetsPlugin({})
-            ]
-        }
-    }
-
-    return config;
-};
+const img_config = {
+    context: path.join(__dirname, 'src', 'img', 'users'),
+}

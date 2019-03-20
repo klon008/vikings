@@ -1,12 +1,14 @@
+@if global-variable-exists(right-bar-width) {
+}
+@else{
+  $right-bar-width: 58px !global;
+}
 .navbar{
   height: $top-bar-height;
   padding: 0;
   width: 100%;
   margin-right: 0px;
   margin-left: 0px;
-  & .right-element{
-    background-color: lighten($topbar-background, 10%);
-  }
   &.navbar-dark{
     color: rgba(255,255,255,.7);
   }
@@ -106,6 +108,7 @@
 .logo{
   display: flex;
   align-items: center;
+  filter: invert(100%);
 }
 .logo__sitename{
   display: flex;
@@ -162,7 +165,8 @@
       height:20px;
     }
     &.right-element{
-      padding:0.375rem 0.75rem;
+      width: $right-bar-width;
+      background-color: lighten($topbar-background, 10%);
     }
   }
   display: flex;
