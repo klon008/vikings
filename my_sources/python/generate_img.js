@@ -48,8 +48,31 @@ fs.readdir(usersFolder, (err, files) => {
         let r = file.replace(/\.[^/.]+$/, "")
         let ss = `
 \.right-side-chat__user(data-toggle="tooltip" title="Твой друг" data-placement="left")
-    img(srcSet=require('../img/users/${neededWidth}/${neededWidth}x-${file}')).right-side-chat__userpic
-        `
+\timg(srcSet=require('../img/users/${neededWidth}/${neededWidth}x-${file}')).right-side-chat__userpic`
+        let random_boolean = Math.random() >= 0.5;
+        if (random_boolean) {
+            let rand = Math.random() * 14 + 1;
+            let unread_count_n = Math.floor(rand);
+            let unread_count = `\.unread-count ${unread_count_n}`
+            ss = ss + "\n\t" + unread_count
+        }
+        let statusicon = `\.status-icon`
+        let randomStatus = Math.floor(Math.random() * 4)
+        switch (randomStatus){
+            case 0:
+                statusicon+=`\.offline`
+                break;
+            case 1:
+                statusicon+=`\.do-not-disturb`
+                break;
+            case 2:
+                statusicon+=`\.online`
+                break;
+            case 3:
+                statusicon+=`\.away`
+                break;
+        }
+        ss = ss + "\n\t" + statusicon
 
         let pathToFile = path.resolve(usersFolder, file);
         try {
@@ -71,12 +94,12 @@ fs.readdir(usersFolder, (err, files) => {
                     console.log(colors.cyan(`Изображение ${file} сжато до ${neededWidth}px`));
                 });
             }
-        }
-        catch (err) {
+        } catch (err) {
             console.log(colors.red(err));
         }
     }
     let res = users.join("");
+    res = res.substr(1);
     fs.writeFile(right_sidebar_users_template, res, function (err) {
         if (err) {
             return console.log(colors.red(err));
