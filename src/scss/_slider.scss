@@ -1,0 +1,33 @@
+@import './my_mixins';
+$slider-background: #0d1723;
+.slick-slide img{
+    width: 82px !important;
+    height: 82px !important;
+    object-fit: cover;
+}
+.slick-slider{
+    padding: 5px;
+    background-color: $slider-background;
+}
+.slick-prev, .slick-next{
+    z-index: 1;
+    width: 50px;
+    height: 100%;
+    &:hover{
+    }
+}
+.slick-prev{
+    &,&:hover,&:focus{
+        left:0;
+        @include linear-gradient(to right, $slider-background 15%, rgba($slider-background,0) 100%);
+    }
+}
+.slick-next{
+    &,&:hover,&:focus{
+        right:0;
+        @include linear-gradient(to left, $slider-background 15%, rgba($slider-background,0) 100%);
+    }
+}
+.slick-slider .slick-list{
+    z-index: 0;
+}

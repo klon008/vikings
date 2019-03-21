@@ -1,22 +1,26 @@
 const $ = require('jquery'); //jquery
-const jQuery = $;
+
+
 
 const bootstrap = require('bootstrap'); //подключаю бутстрап
 const wavesjs = require('./undr/waves.js'); // библиотека для анимации волн при клике
 const TweenMax = require('./undr/TweenMax.min.js'); //Крутая либа для анимаций. Необходима для счетчика
 const countdown = require('./undr/_countdown.js'); //Код счетчика
+const slickCarousel = require('slick-carousel');
 /*const main = require('./undr/main.js'); //Мой код*/
 import "bootstrap/scss/bootstrap.scss"; //css часть бутстрапа
-//import 'flag-icon-css/sass/flag-icon.scss'; //Флаги
-const OverlayScrollbars = require('overlayscrollbars');
-import 'overlayscrollbars/css/OverlayScrollbars.css';
+//import 'flag-icon-css/sass/flag-icon.scss'; //Флаги убрал и оставил только 2 флага. все подключается в scss.scss
+const OverlayScrollbars = require('overlayscrollbars'); //кастомный скроллбар
+import 'overlayscrollbars/css/OverlayScrollbars.css'; //кастомный скроллбар
 import 'material-design-icons/iconfont/material-icons.css'; //Иконки в стиле Материал
 import '../scss/material-icons-outline/_outline.scss'; //Иконки в стиле Материал Обводка
+
 import '../scss/scss.scss'; //Мой css
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 
 
-
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   let bookmare = document.getElementById('add_to_fav');
   bookmare.addEventListener('click', () => {
     if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
@@ -29,22 +33,36 @@ document.addEventListener('DOMContentLoaded', function () {
     } else { // webkit - safari/chrome
       alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
     }
+
   })
-  $('[data-toggle="tooltip"]').tooltip({container: 'body', boundary: 'window', paddingAbsolute: true});
-  var instanceOverlay = OverlayScrollbars(document.getElementById('sidebar'), {
-    overflowBehavior: {
-      x: "hidden"
-    },
+  $('[data-toggle="tooltip"]').tooltip({
+    container: 'body',
+    boundary: 'window',
+    paddingAbsolute: true
+  });
+  for (var scrl of ['sidebar', 'right-side-chat']) {
+    OverlayScrollbars(document.getElementById(scrl), {
+      overflowBehavior: {
+        x: "hidden"
+      },
+      scrollbars: {
+        autoHide: "leave"
+      }
+    });
+  }
+
+  var MainContentOverlay = OverlayScrollbars(document.getElementsByTagName('main'), {
     scrollbars: {
       autoHide: "leave"
     }
   });
+  $(".slick").slick({
+    infinite: true,
+    slidesToShow: 11,
+    dots: false,
+    centerMode: true,
+    autoplay: true,
+    arrows: true
+  });
 })
-var instanceOverlay = OverlayScrollbars(document.getElementById('right-side-chat'), {
-  overflowBehavior: {
-    x: "hidden"
-  },
-  scrollbars: {
-    autoHide: "leave"
-  }
-});
+

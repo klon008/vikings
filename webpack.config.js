@@ -35,7 +35,7 @@ const config = {
     },
     devtool: "cheap-inline-module-source-map",
     plugins: [
-        //new BundleAnalyzerPlugin(),
+        new BundleAnalyzerPlugin(),
         new webpack.ProvidePlugin({
             $: "jquery/dist/jquery.min.js",
             jQuery: "jquery/dist/jquery.min.js",

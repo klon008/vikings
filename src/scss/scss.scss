@@ -5,12 +5,16 @@ $topbar-background: #1e212a;
 $sidebar-background: #2d323e;
 $main-font-color: #ffffff;
 $right-bar-width: 58px;
+$body-bg-color:  #3c434d;
 
+button{
+  background-color: transparent;
+}
 #background{
   background-image: url("../img/magazine.jpg");
   
   background-size: cover;
-  content : "z";
+  content : "";
   display: block;
   position: absolute;
   top: 0;
@@ -25,16 +29,20 @@ $right-bar-width: 58px;
   background-color: #1e212a;
 }
 body{
-  background-color: #3c434d;
+  background-color: $body-bg-color;
   overflow: hidden;
 }
-
+@import "./my_mixins";
 @import "./fonts";
 @import "./waves";
 @import "./countdown";
-@import "./topbar";
+@import "./header";
 @import "./sidebar";
 @import "./rightbar";
+@import "./main";
+@import "./flags";
+@import "./footer";
+
 .no-outline{
   &:focus {
     outline: none;
@@ -84,7 +92,7 @@ body{
   background-color: #039be5;
   color: rgb(255, 255, 255);
 }
-@import "./_flags";
+
 
 .material-shadow {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -95,43 +103,3 @@ body{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.wrapper {
-}
-main {
-}
-footer {
-  background-color: #1e2129!important;
-  color: #ffffff !important;
-  min-height: 40px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding-left: $left-bar-width;
-  padding-right:$right-bar-width;
-}
-.footer-nav{
-  flex-direction: row;
-  display: flex;
-  align-items: stretch;
-  font-stretch: normal;
-  height: 100%;
-  flex-wrap: wrap;
-  margin: auto 0;
-  justify-content: flex-end;
-  padding: 8px;
-  & .footer-link{
-    margin-right: 0.4em;
-    &:not(:first-child):before{
-      content: "•";
-      margin-right: 0.3em;
-    }
-  }
-  & a{
-    cursor: pointer;
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    &:hover{
-      color: darken(white, 20%) !important;
-    }
-  }
-}
