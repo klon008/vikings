@@ -1,6 +1,6 @@
 const resourcesFolder = './src/img/resources/';
 const usersFolder = './src/img/users/';
-const colors = require('colors');
+const colors = require('chalk');
 const im = require('imagemagick');
 const fs = require('fs');
 const path = require('path');
