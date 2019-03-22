@@ -1,0 +1,88 @@
+$magazine_element-color: #2e323e;
+.magazine__cards_wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-gap: 10px;
+    .card {
+        border-radius: 4px;
+        background-color: $magazine_element-color;
+        color: #ffffff;
+        padding: 0 !important;
+        border: none;
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        cursor: pointer;
+        &:hover{
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+    }
+}
+.magazine__filter{
+    background-color: $magazine_element-color;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 2px;
+}
+.magazine__filterblock{
+    >*{
+        margin: 3px 0;
+    }
+    border-bottom: 1px solid darken(white, 5%);
+    font-size: 12px;
+    padding: 7px;
+    >h1{
+        font-size: 16px;
+        margin-bottom: 1em;
+    }
+    >a{
+        display: block;
+        cursor: pointer;
+        color: #ffffff;
+        padding: 0.1em 0;
+        &:hover{
+            text-decoration: none;
+            color: darken(#ffffff, 15%);
+        }
+    }
+    &:last-child{
+        border-bottom: none;
+    }
+    .input-text-group{
+        margin: 10px 0;
+        &:first-child{
+            margin-top: 0;
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }
+        & input[type="text"]{
+            border: 0;
+            border-bottom: 1px solid $magazine_element-color;
+            &:first-child{
+                border-bottom-right-radius: inherit;
+                border-bottom-left-radius: inherit;
+            }
+            &:last-child{
+                border-top-right-radius: inherit;
+                border-top-left-radius: inherit;
+            }
+        }
+
+    }
+    .custom-control.custom-checkbox{
+        .custom-control-label{
+            cursor: pointer;
+            @include user-select(none);
+            &:before, &:after{
+                top: 0.1rem;
+            }
+        }
+        .custom-control-input:checked ~ .custom-control-label::before{
+            border-color: #0498e0;
+            background-color: #0498e0;
+        }
+    }
+    .form-control{
+        height: 32px;
+    }
+}

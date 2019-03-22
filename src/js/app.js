@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   $(".slick").slick({
-    infinite: true,
     slidesToShow: 11,
+    infinite: true,
     dots: false,
     centerMode: true,
     autoplay: true,

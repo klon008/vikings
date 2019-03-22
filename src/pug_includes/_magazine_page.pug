@@ -1,0 +1,65 @@
+.container-flex.p-2
+    .row
+        .col-sm-2
+            .magazine__filter
+                .magazine__filterblock
+                    h1 Рубрики
+                    a(href="#") Гильдия наемников
+                    a(href="#") Ищу клан
+                    a(href="#") Реклама кланов
+                    a(href="#") Прочее
+                    a(href="#") Продажа замков
+                    a(href="#") Продажа ресурсов
+                    a(href="#") Продажа цитаделей
+                .magazine__filterblock
+                    h1 Услуга включает
+                    .custom-control.custom-checkbox
+                        input#filterheck1.custom-control-input(type='checkbox')
+                        label.custom-control-label(for='filterheck1') Перелет использует дракары
+                    .custom-control.custom-checkbox
+                        input#filterheck2.custom-control-input(type='checkbox')
+                        label.custom-control-label(for='filterheck2') Уничтожить 1 цель
+                    .custom-control.custom-checkbox
+                        input#filterheck3.custom-control-input(type='checkbox')
+                        label.custom-control-label(for='filterheck3') Уничтожить 3 цели
+                    .custom-control.custom-checkbox
+                        input#filterheck4.custom-control-input(type='checkbox')
+                        label.custom-control-label(for='filterheck4') Уничтожить весь клан
+                    .custom-control.custom-checkbox
+                        input#filterheck5.custom-control-input(type='checkbox')
+                        label.custom-control-label(for='filterheck5') Убить защитников MC
+                .magazine__filterblock
+                    h1 Количество могущества
+                    input(type="text" class="form-control" placeholder="От")#filter_power
+                .magazine__filterblock
+                    h1 Цена
+                    a(href="#") До 500 
+                        span.currency ₽
+                    a(href="#") До 2500 
+                        span.currency ₽
+                    a(href="#") До 14000 
+                        span.currency ₽
+                    a(href="#") До 14000 и выше 
+                        span.currency ₽
+                    .input-text-group
+                        input(type="text" class="form-control" placeholder="От")#filter_power_min
+                        input(type="text" class="form-control" placeholder="До")#filter_power_max
+                .magazine__filterblock
+                    h1 Уровень наменика
+                    a(href="#") Новичек или выше
+                    a(href="#") Продвинутый или выше
+                    a(href="#") Профессионал
+                .magazine__filterblock
+                    h1 Активность наемников
+                    a(href="#") Онлайн
+                    a(href="#") Заходил до 1дн. назад
+                    a(href="#") Заходил до 3дн. назад
+                .magazine__filterblock
+                    h1 Положительных отзывов
+                    a(href="#") От 1
+                    a(href="#") От 5
+                    a(href="#") От 20
+
+        .col-sm-10
+            .magazine__cards_wrapper
+                include _services_items.pug

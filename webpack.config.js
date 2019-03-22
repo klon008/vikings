@@ -25,7 +25,7 @@ const config = {
     },
     watch: false,
     watchOptions: {
-        aggregateTimeout: 300,
+        aggregateTimeout: 100,
         ignored: /node_modules/,
     },
     devServer: {
@@ -46,7 +46,7 @@ const config = {
             chunkFilename: "[id].css"
         }),
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src', 'index.pug')
+            template: path.join(__dirname, 'src', 'index.pug'),
         }),
         new FaviconsWebpackPlugin({
             logo: './src/img/logo.png',
@@ -69,10 +69,12 @@ const config = {
             {
                 test: /\.pug$/,
                 exclude: exclude_tmpl,
-                loader: "pug-loader",
-                options: {
-                    pretty: true
-                }
+                use: [{
+                    loader: "pug-loader",
+                    options: {
+                        pretty: true
+                    }
+                }]
             },
             {
                 test: [/\.scss$/, /\.sass$/],
@@ -193,7 +195,7 @@ if (process.env.NODE_ENV === 'production') {
     }
 }
 
-module.exports.push( config );
+module.exports.push(config);
 
 const img_config = {
     context: path.join(__dirname, 'src', 'img', 'users'),

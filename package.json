@@ -62,7 +62,7 @@
     "dev": "webpack --mode development --progress --colors",
     "dev:watch": "webpack --mode development --progress --colors --watch --hot",
     "prod": "webpack -p --mode production --env.production --progress --colors",
-    "server": "webpack-dev-server --content-base src --progress --watch",
+    "server": "webpack-dev-server --content-base src --progress --watch --inline",
     "lazy": "webpack-dev-server --lazy --content-base public --progress",
     "clean": "rimraf ./public && mkdirp ./public",
     "git": "git subtree push --prefix public origin gh-pages",

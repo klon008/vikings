@@ -10,6 +10,7 @@ let names = []
 const result_file = "./src/pug_includes/_sidebar_resources.pug"
 const right_sidebar_users_template = "./src/pug_includes/_right_sidebar_users.pug"
 const services_carousel_template = "./src/pug_includes/_services_carousel.pug"
+const services_magazine_item_template = "./src/pug_includes/_services_items.pug"
 console.log(`Generate ${result_file}`.bgYellow);
 
 function optimazeResources() {
@@ -39,7 +40,7 @@ optimazeResources()
 function optimizeUsers() {
     fs.readdir(usersFolder, (err, files) => {
 
-        let users = []
+        let resultet_string_to_pug = []
         let neededWidth = 128;
 
         let direcroryWidthPath = path.resolve(usersFolder, neededWidth.toString())
@@ -87,7 +88,7 @@ function optimizeUsers() {
                     console.log(colors.gray(`${file} не является файлом`))
                 }
                 if (stats.isFile()) {
-                    users.push(slimString);
+                    resultet_string_to_pug.push(slimString);
                     im.resize({
                         srcData: fs.readFileSync(pathToFile, 'binary'),
                         width: neededWidth
@@ -104,7 +105,7 @@ function optimizeUsers() {
                 console.log(colors.red(err));
             }
         }
-        let res = users.join("");
+        let res = resultet_string_to_pug.join("");
         res = res.substr(1);
         fs.writeFile(right_sidebar_users_template, res, function (err) {
             if (err) {
@@ -117,56 +118,98 @@ function optimizeUsers() {
 };
 optimizeUsers()
 
-function optimizeServices() {
-    fs.readdir(servicesFolder, (err, files) => {
-        let users = []
-        let neededWidth = 120;
-
-        let direcroryWidthPath = path.resolve(servicesFolder, neededWidth.toString())
-        console.log(colors.red(direcroryWidthPath))
-
-
-        if (!fs.existsSync(direcroryWidthPath)) {
-            fs.mkdirSync(direcroryWidthPath);
-        }
-        for (let file of files) {
-            let fileNameWithoutExtention = file.replace(/\.[^/.]+$/, "")
-            let slimString = `
+const w120slimString = `
 \.carousel-item
-    img(src=require('../img/services/${neededWidth}/${neededWidth}x-${file}') alt='${fileNameWithoutExtention}')`
-            let pathToFile = path.resolve(servicesFolder, file);
-            try {
-                var stats = fs.statSync(pathToFile);
-                if (stats.isDirectory()) {
-                    console.log(colors.gray(`${file} не является файлом`))
-                }
-                if (stats.isFile()) {
-                    users.push(slimString);
-                    im.resize({
-                        srcData: fs.readFileSync(pathToFile, 'binary'),
-                        width: neededWidth
+    img(src=require('../img/services/%cWidth%/%cWidth%x-%file%') alt='%fileNameWithoutExtention%')`;
 
-                    }, function (err, stdout, stderr) {
-                        let direcroryWidthPath = path.resolve(servicesFolder, neededWidth.toString())
-                        let rt = path.resolve(direcroryWidthPath, `${neededWidth}x-${file}`)
-                        if (err) throw err
-                        fs.writeFileSync(rt, stdout, 'binary');
-                        console.log(colors.cyan(`Изображение ${file} сжато до ${neededWidth}px`));
+const w480slimString = `
+\.card
+    img.card-img-top(src=require('../img/services/%cWidth%/%cWidth%x-%file%') alt='%fileNameWithoutExtention%')
+    .card-body
+        .card-title Card title
+        .card-text Update! Experience the fury of Kingdoms Fight t...`;
+
+function optimizeServices(inSizes = [{
+    width: 120,
+    sString: w120slimString
+}]) {
+    fs.readdir(servicesFolder, (err, files) => {
+        
+        for (let cSize of inSizes) {
+            let resultet_string_to_pug = []
+            if (cSize.width) {
+                let cWidth = cSize.width
+                let cHeight = (cSize.height) ? cSize.height : cWidth
+                let direcroryWidthPath = path.resolve(servicesFolder, cWidth.toString())
+
+                if (!fs.existsSync(direcroryWidthPath)) {
+                    fs.mkdirSync(direcroryWidthPath);
+                }
+                for (let file of files) {
+                    let fileNameWithoutExtention = file.replace(/\.[^/.]+$/, "")
+                    let slimString = ''
+                    if (cSize.sString) {
+                        slimString = template(cSize.sString, {cWidth: cWidth, file: file, fileNameWithoutExtention: fileNameWithoutExtention})
+                    }
+                    let pathToFile = path.resolve(servicesFolder, file);
+                    try {
+                        var stats = fs.statSync(pathToFile);
+                        if (stats.isDirectory()) {
+                            console.log(colors.gray(`${file} не является файлом`))
+                        }
+                        if (stats.isFile()) {
+                            resultet_string_to_pug.push(slimString);
+
+                            im.resize({
+                                srcData: fs.readFileSync(pathToFile, 'binary'),
+                                width: cWidth,
+                                height: cHeight
+
+                            }, function (err, stdout, stderr) {
+                                let direcroryWidthPath = path.resolve(servicesFolder, cWidth.toString())
+                                let rt = path.resolve(direcroryWidthPath, `${cWidth}x-${file}`)
+                                if (err) throw err
+                                fs.writeFileSync(rt, stdout, 'binary');
+                                console.log(colors.cyan(`Изображение ${file} сжато до ${cWidth}px`));
+                            });
+                        }
+                    } catch (err) {
+                        console.log(colors.red(err));
+                    }
+                }
+                if (cSize.pth) {
+                    let res = resultet_string_to_pug.join("");
+                    res = res.substr(1);
+                    fs.writeFile(cSize.pth, res, function (err) {
+                        if (err) {
+                            return console.log(colors.red(err));
+                        }
+
+                        console.log(colors.cyan("html для картинок-пользователей сгенерирован!"));
                     });
                 }
-            } catch (err) {
-                console.log(colors.red(err));
             }
         }
-        let res = users.join("");
-        res = res.substr(1);
-        fs.writeFile(services_carousel_template, res, function (err) {
-            if (err) {
-                return console.log(colors.red(err));
-            }
-
-            console.log(colors.cyan("html для картинок-пользователей сгенерирован!"));
-        });
     });
 }
-optimizeServices();
+optimizeServices([{
+    width: 120,
+    sString: w120slimString,
+    pth: services_carousel_template
+}, {
+    width: 480,
+    height: 330,
+    sString: w480slimString,
+    pth: services_magazine_item_template
+}]);
+
+/** Функция замены в строке */
+function template(templateid, data) {
+    return templateid
+        .replace(
+            /%(\w*)%/g,
+            function (m, key) {
+                return data.hasOwnProperty(key) ? data[key] : "";
+            }
+        );
+}
