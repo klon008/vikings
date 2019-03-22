@@ -61,7 +61,7 @@
   "scripts": {
     "dev": "webpack --mode development --progress --colors",
     "dev:watch": "webpack --mode development --progress --colors --watch --hot",
-    "prod": "webpack -p --mode production --env.production --progress --colors",
+    "prod": "webpack -p --mode production --progress --colors",
     "server": "webpack-dev-server --content-base src --progress --watch --inline",
     "lazy": "webpack-dev-server --lazy --content-base public --progress",
     "clean": "rimraf ./public && mkdirp ./public",

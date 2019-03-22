@@ -9,7 +9,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const exclude_tmpl = /(node_modules|bower_components|cached_uglify|undr|my_sources)/;
 // const CopyPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const devMode = process.env.NODE_ENV !== 'production'
+const isProduction = process.argv[process.argv.indexOf('--mode') + 1] === 'production';
+const devMode = !isProduction;
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = [];
@@ -46,7 +47,7 @@ const config = {
             chunkFilename: "[id].css"
         }),
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src', 'index.pug'),
+            template: path.join(__dirname, 'src', 'index.pug')
         }),
         new FaviconsWebpackPlugin({
             logo: './src/img/logo.png',
@@ -69,12 +70,10 @@ const config = {
             {
                 test: /\.pug$/,
                 exclude: exclude_tmpl,
-                use: [{
-                    loader: "pug-loader",
-                    options: {
-                        pretty: true
-                    }
-                }]
+                loader: "pug-loader",
+                options: {
+                    pretty: true
+                }
             },
             {
                 test: [/\.scss$/, /\.sass$/],
@@ -195,7 +194,7 @@ if (process.env.NODE_ENV === 'production') {
     }
 }
 
-module.exports.push(config);
+module.exports.push( config );
 
 const img_config = {
     context: path.join(__dirname, 'src', 'img', 'users'),

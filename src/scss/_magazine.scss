@@ -3,6 +3,9 @@ $magazine_element-color: #2e323e;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     grid-gap: 10px;
+    @media (max-width: 960px) {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
     .card {
         border-radius: 4px;
         background-color: $magazine_element-color;
@@ -85,4 +88,10 @@ $magazine_element-color: #2e323e;
     .form-control{
         height: 32px;
     }
+}
+.flex-0_1-left{
+    flex-grow: 1 !important;
+}
+.flex-100_2-left{
+    flex-grow: 100 !important;
 }

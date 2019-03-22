@@ -1,7 +1,4 @@
 const $ = require('jquery'); //jquery
-
-
-
 const bootstrap = require('bootstrap'); //подключаю бутстрап
 const wavesjs = require('./undr/waves.js'); // библиотека для анимации волн при клике
 const TweenMax = require('./undr/TweenMax.min.js'); //Крутая либа для анимаций. Необходима для счетчика
