@@ -91,6 +91,9 @@ $magazine_element-color: #2e323e;
 }
 .flex-0_1-left{
     flex-grow: 1 !important;
+    @media (max-device-width: 382px) {
+        width: 100%;
+    }
 }
 .flex-100_2-left{
     flex-grow: 100 !important;

@@ -5,7 +5,6 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    padding-left: $left-bar-width;
     padding-right: 10px;
     margin-top:15px;
 }
@@ -20,13 +19,25 @@ footer {
     margin: auto 0;
     justify-content: flex-end;
     padding: 8px;
+    @media (max-width: 681px) {
+        justify-content: flex-start;
+        
+    }
 
     & .footer-link {
         margin-right: 0.4em;
 
-        &:not(:first-child):before {
+        &:before {
             content: "•";
             margin-right: 0.3em;
+        }
+        @media (max-width: 681px){
+            width: 100%;
+        }
+        @media (min-width: 682px) {            
+            &:first-child:before{
+                content: "";
+            }
         }
     }
 
