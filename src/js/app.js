@@ -5,16 +5,17 @@ const TweenMax = require('./undr/TweenMax.min.js'); //Крутая либа дл
 const countdown = require('./undr/_countdown.js'); //Код счетчика
 const slickCarousel = require('slick-carousel');
 /*const main = require('./undr/main.js'); //Мой код*/
-import "bootstrap/scss/bootstrap.scss"; //css часть бутстрапа
+
 //import 'flag-icon-css/sass/flag-icon.scss'; //Флаги убрал и оставил только 2 флага. все подключается в scss.scss
 const OverlayScrollbars = require('overlayscrollbars'); //кастомный скроллбар
 import 'overlayscrollbars/css/OverlayScrollbars.css'; //кастомный скроллбар
 import 'material-design-icons/iconfont/material-icons.css'; //Иконки в стиле Материал
 import '../scss/material-icons-outline/_outline.scss'; //Иконки в стиле Материал Обводка
-
-import '../scss/scss.scss'; //Мой css
+import "bootstrap/scss/bootstrap.scss"; //css часть бутстрапа
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
+import '../scss/scss.scss'; //Мой css
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   var MainContentOverlay = OverlayScrollbars(document.getElementsByTagName('main'), {
     scrollbars: {
-      autoHide: "leave"
+      autoHide: "leave",
     }
   });
   $(".slick").slick({

@@ -155,9 +155,9 @@ const config = {
                                 interlaced: false,
                             },
                             // the webp option will enable WEBP
-                            webp: {
-                                quality: 75
-                            }
+                            // webp: {
+                            //     quality: 75
+                            // }
                         }
                     }
                 ]
