@@ -18,6 +18,50 @@ $magazine_element-color: #2e323e;
             transform: translateY(-2px);
             box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
         }
+        .card-footer{
+            font-family: 'Lato';
+            font-size: 12px;
+            font-weight: 300;
+            padding-left: 0;
+            padding-right: 0;
+            background: none;
+            border-top: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            align-content: space-between;
+            &:before{
+                border: none;
+            }
+            .card-footer__nickname{
+                flex-grow: 1;
+                flex-shrink: 1;
+                display: flex;
+                align-items: center;
+                .status-icon{
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin-right: 0.5em;
+                }
+            }
+            .card-footer__right{
+                flex-shrink: 0;
+                height: 26px;
+                vertical-align: middle
+            }
+        }
+    }
+    .star{
+        color: orange;
+        &>object{
+            vertical-align: middle;
+            display: inline;
+            height: 26px;
+        }
+        margin: 0 0.4em 0 0;
     }
 }
 .magazine__filter{

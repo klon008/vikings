@@ -4,10 +4,9 @@ const srcDir = path.join(__dirname, 'src');
 const outDir = path.join(__dirname, 'public');
 const UglifyJsPlugin = require('webpack-uglify-js-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const HtmlBeautifyPlugin = require('html-beautify-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const exclude_tmpl = /(node_modules|bower_components|cached_uglify|undr|my_sources)/;
-// const CopyPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const isProduction = process.argv[process.argv.indexOf('--mode') + 1] === 'production';
 const devMode = !isProduction;
@@ -53,7 +52,10 @@ const config = {
             logo: './src/img/logo.png',
             prefix: 'icons-',
             statsFilename: 'iconstats.json',
-        })
+        }),
+        new CopyPlugin([
+            { from: './src/img/icons', to: './img/icons' },
+        ]),
     ],
     module: {
         rules: [{

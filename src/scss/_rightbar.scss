@@ -1,17 +1,19 @@
-@if global-variable-exists(right-bar-width) {
-}
-@else{
+@if global-variable-exists(right-bar-width) {}
+
+@else {
     $right-bar-width: 58px !global;
 }
-.right-side-chat{
+
+.right-side-chat {
     background-color: #f5f5f5;
     height: calc(100vh - #{$top-bar-height});
     position: fixed;
     top: $top-bar-height;
-    right:0;
+    right: 0;
     width: $right-bar-width;
     overflow-y: auto;
     padding-top: 10px;
+
     & .os-scrollbar.os-scrollbar-vertical {
         width: 6px !important;
         padding-right: 0;
@@ -19,13 +21,13 @@
     }
 }
 
-.right-side-chat__userpic{
+.right-side-chat__userpic {
     width: 32px;
     height: 32px;
     border-radius: 50%;
 }
 
-.right-side-chat__user{
+.right-side-chat__user {
     cursor: pointer;
     text-align: center;
     margin-bottom: 10px;
@@ -34,7 +36,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .unread-count{
+
+    .unread-count {
         background-color: #039be5;
         color: #fff;
         position: absolute;
@@ -49,9 +52,10 @@
         padding: 0 5px;
         font-size: 11px;
         text-align: center;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.35);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .35);
     }
-    .status-icon{
+
+    .status-icon {
         position: absolute;
         width: 12px;
         height: 12px;
@@ -59,22 +63,26 @@
         left: 36px;
         border: 2px solid #f5f5f5;
         border-radius: 50%;
-        &.online{
-            background-color: #4caf50;
-        }
-        &.offline{
-            background-color: #646464;
-        }
-        &.away{
-            background-color: #ffc107;
-        }
-        &.do-not-disturb{
-            background-color: #f44336;
-        }
     }
-    
+
 }
 
-.right-side-chat__wrap{
-    
+.status-icon {
+    &.online {
+        background-color: #4caf50;
+    }
+
+    &.offline {
+        background-color: #646464;
+    }
+
+    &.away {
+        background-color: #ffc107;
+    }
+
+    &.do-not-disturb {
+        background-color: #f44336;
+    }
 }
+
+.right-side-chat__wrap {}
