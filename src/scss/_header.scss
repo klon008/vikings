@@ -3,6 +3,9 @@
 @else{
   $right-bar-width: 58px !global;
 }
+$leftbar_time_animation: 0.5s;
+$leftbar_func_anumation: ease-in-out;
+
 body>header{
   position: absolute;
   top:0;
@@ -27,6 +30,7 @@ body>header{
   &>.container-fluid{
     padding: 0;
     flex-wrap: nowrap;
+    @include transition(width $leftbar_time_animation $leftbar_func_anumation);
     &>*{
       margin-right: 0.6em;
       &:last-child{
@@ -36,6 +40,10 @@ body>header{
   }
   .form-inline{
     margin-left: 0.6em;
+    max-width: 198px;
+    .form-control{
+      width: 198px;
+    }
   }
 }
 
@@ -59,6 +67,20 @@ body>header{
 .navbar > .container-fluid.topbar-flex{
   padding-left: $left-bar-width;
   height: 100%;
+  
+  @include transition(padding-left $leftbar_time_animation $leftbar_func_anumation);
+  
+  @include opacity(1);
+  &.collapsed-left{
+    padding-left: 95px;
+    .logo__sitename{
+      width: 0;
+      @include opacity(0);
+    }
+    .topbar-left{
+      width: 95px;
+    }
+  }
 }
 
 .infostatususers{
@@ -97,10 +119,11 @@ body>header{
   margin-right: 0.45em;
 }
 .topbar-left{
+  @include transition(width $leftbar_time_animation $leftbar_func_anumation);
   left: 0;
   top:0;
   position: fixed;
-  min-width: $left-bar-width;
+  width: $left-bar-width;
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -117,6 +140,11 @@ body>header{
   filter: invert(100%);
 }
 .logo__sitename{
+  
+  @include transition(width $leftbar_time_animation $leftbar_func_anumation);
+  @include transition-property(opacity);
+  @include opacity(1);
+
   display: flex;
   align-items: center;
   white-space: nowrap;

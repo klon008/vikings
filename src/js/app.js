@@ -13,13 +13,15 @@ import 'material-design-icons/iconfont/material-icons.css'; //Иконки в с
 import '../scss/material-icons-outline/_outline.scss'; //Иконки в стиле Материал Обводка
 import "bootstrap/scss/bootstrap.scss"; //css часть бутстрапа
 import 'slick-carousel/slick/slick-theme.css';
-import 'slick-carousel/slick/slick.css';
-import '../scss/scss.scss'; //Мой css
-import '../img/icons/icons.css'
+import 'slick-carousel/slick/slick.css'
+import '../scss/scss.scss' //Мой css
+import '../img/icons/icons.css'//Подгружаем иконки @FIXME перенисти все иконки в ЛИЧНЫЙ иконочный шрифт
 
-
+import './undr/leftbar.js'
 
 document.addEventListener('DOMContentLoaded', () => {
+  let body = document.getElementsByTagName("body")[0];
+  body.classList.remove('load');
   let bookmare = document.getElementById('add_to_fav');
   bookmare.addEventListener('click', () => {
     if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
@@ -30,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.title = document.title;
       return true;
     } else { // webkit - safari/chrome
-      alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
+      alert('Нажмите ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') + ' + D чтобы добавить сайт в закладки.');
     }
 
   })

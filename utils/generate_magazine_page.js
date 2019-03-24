@@ -47,7 +47,7 @@ function runModule(users) {
                 if (tmpl_pattern) {
                     let star = _.random(1,5);
                     let staricon = 'icon-star_outline';
-                    if (star>(5/2)) staricon='icon-star'
+                    if (star>=(5/2)) staricon='icon-star'
                     else if(star>1) staricon='icon-star_half'
                     slimString = template(tmpl_pattern, {
                         cWidth: cWidth,

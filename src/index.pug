@@ -3,13 +3,13 @@ head
     meta(charset='UTF-8')
     meta(name="viewport" content="width=device-width,initial-scale=1")
     title Викинги - информационный портал.
-body
+body.load
     
     include pug_includes/_topbar
     
     .wrapper
         include pug_includes/_sidebar
-        .content-body
+        .content-body#content-body
             main
                 include pug_includes/_slideshow
                 include pug_includes/_magazine_page

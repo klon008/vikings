@@ -1,3 +1,6 @@
+$leftbar_time_animation: 0.5s;
+$leftbar_func_anumation: ease-in-out;
+$collapsed-width: 95px;
 .content-body {
     margin-left: $left-bar-width;
     margin-right: $right-bar-width;
@@ -16,6 +19,13 @@ main {
     & .container-flex .row{
         margin-left: 0;
         margin-right: 0;
+    }
+}
+#content-body{
+    @include transition(margin-left $leftbar_time_animation $leftbar_func_anumation);
+    &.collapsed-left{
+        margin-left: $collapsed-width;
+        
     }
 }
 

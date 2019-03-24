@@ -32,6 +32,9 @@ body{
   background-color: $body-bg-color;
   overflow: hidden;
 }
+.load * {
+  @include transition(nonde !important)
+}
 @import "./my_mixins";
 @import "./fonts";
 @import "./waves";
