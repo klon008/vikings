@@ -19,6 +19,7 @@ $magazine_element-color: #2e323e;
             box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
         }
         .card-footer{
+            width: 100%;
             font-family: 'Lato';
             font-size: 12px;
             font-weight: 300;
@@ -30,7 +31,8 @@ $magazine_element-color: #2e323e;
             flex-direction: row;
             flex-wrap: nowrap;
             align-items: center;
-            align-content: space-between;
+            align-content: center;
+            justify-content: space-between;
             &:before{
                 border: none;
             }
@@ -44,7 +46,7 @@ $magazine_element-color: #2e323e;
                     height: 12px;
                     border-radius: 50%;
                     display: inline-block;
-                    margin-right: 0.5em;
+                    margin-right: 1em;
                 }
             }
             .card-footer__right{
@@ -56,12 +58,17 @@ $magazine_element-color: #2e323e;
     }
     .star{
         color: orange;
-        &>object{
-            vertical-align: middle;
-            display: inline;
-            height: 26px;
+        height: 26px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        &:before{
+            font-size: 2em;
         }
-        margin: 0 0.4em 0 0;
+    }
+    .orange{
+        color: orange;
+        margin-right: 0.5em;
     }
 }
 .magazine__filter{

@@ -178,8 +178,14 @@ body>header{
   display: flex;
   align-items: center;
   margin-left: auto;
-  & .fa-language{
-    font-size: 2em;
+  .icon-language-solid{
+    font-size: 2.2em;
+  }
+  .icon-favorite_outline_24px{
+    font-size: 1.4em;
+  }
+  icon-settings-cog{
+    font-size: 1.1em;
   }
   &>*{
     height: 100%;

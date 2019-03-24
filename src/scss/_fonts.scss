@@ -1,14 +1,14 @@
 $lato-font-path: "../fonts/lato";
-@font-face {
-  font-family: 'eq';
-  src: url('../fonts/eq.eot');
-  src: url('../fonts/eq.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/eq.woff') format('woff'),
-       url('../fonts/eq.ttf') format('truetype'),
-       url('../fonts/eq.svg#eq') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'eq';
+//   src: url('../fonts/eq.eot');
+//   src: url('../fonts/eq.eot?#iefix') format('embedded-opentype'),
+//        url('../fonts/eq.woff') format('woff'),
+//        url('../fonts/eq.ttf') format('truetype'),
+//        url('../fonts/eq.svg#eq') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+// }
 .eq:before{
 display: inline-block;
  font-family: 'eq';

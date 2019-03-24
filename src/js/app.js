@@ -15,6 +15,7 @@ import "bootstrap/scss/bootstrap.scss"; //css часть бутстрапа
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import '../scss/scss.scss'; //Мой css
+import '../img/icons/icons.css'
 
 
 
