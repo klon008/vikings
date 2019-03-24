@@ -1,24 +1,47 @@
 $magazine_element-color: #2e323e;
-.magazine__cards_wrapper{
+
+.magazine__cards_wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     grid-gap: 10px;
+
     @media (max-width: 960px) {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
+
     .card {
         border-radius: 4px;
         background-color: $magazine_element-color;
         color: #ffffff;
         padding: 0 !important;
         border: none;
-        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
         cursor: pointer;
-        &:hover{
-            transform: translateY(-2px);
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+        &.premium {
+            // background : #ca942a;
+            @include background-image( linear-gradient(bottom,#a1812e 0%,#cfad56 53.76%, #f4de8b 100%));
+            // text-shadow: 1px 1px 2px #3a3a3a;
+            color: #3d2a15 !important;
+
+            
+            .star, .orange{
+                color: #8F1D0F !important;
+            }
+            .status-icon{
+                box-shadow: 1px 1px 2px #3f3f3f7d;
+            }
+            .card-footer{
+                font-weight: 400;
+            }
         }
-        .card-footer{
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        .card-footer {
             width: 100%;
             font-family: 'Lato';
             font-size: 12px;
@@ -33,15 +56,18 @@ $magazine_element-color: #2e323e;
             align-items: center;
             align-content: center;
             justify-content: space-between;
-            &:before{
+
+            &:before {
                 border: none;
             }
-            .card-footer__nickname{
+
+            .card-footer__nickname {
                 flex-grow: 1;
                 flex-shrink: 1;
                 display: flex;
                 align-items: center;
-                .status-icon{
+
+                .status-icon {
                     width: 12px;
                     height: 12px;
                     border-radius: 50%;
@@ -49,103 +75,128 @@ $magazine_element-color: #2e323e;
                     margin-right: 1em;
                 }
             }
-            .card-footer__right{
+
+            .card-footer__right {
                 flex-shrink: 0;
                 height: 26px;
                 vertical-align: middle
             }
         }
     }
-    .star{
+
+    .star {
         color: orange;
         height: 26px;
         display: inline-block;
         vertical-align: middle;
         margin: 0;
-        &:before{
+
+        &:before {
             font-size: 2em;
         }
     }
-    .orange{
+
+    .orange {
         color: orange;
         margin-right: 0.5em;
     }
 }
-.magazine__filter{
+
+.magazine__filter {
     background-color: $magazine_element-color;
     color: #ffffff;
     padding: 5px;
     border-radius: 2px;
 }
-.magazine__filterblock{
-    >*{
+
+.magazine__filterblock {
+    >* {
         margin: 3px 0;
     }
+
     border-bottom: 1px solid darken(white, 5%);
     font-size: 12px;
     padding: 7px;
-    >h1{
+
+    >h1 {
         font-size: 16px;
         margin-bottom: 1em;
     }
-    >a{
+
+    >a {
         display: block;
         cursor: pointer;
         color: #ffffff;
         padding: 0.1em 0;
-        &:hover{
+
+        &:hover {
             text-decoration: none;
             color: darken(#ffffff, 15%);
         }
     }
-    &:last-child{
+
+    &:last-child {
         border-bottom: none;
     }
-    .input-text-group{
+
+    .input-text-group {
         margin: 10px 0;
-        &:first-child{
+
+        &:first-child {
             margin-top: 0;
         }
-        &:last-child{
+
+        &:last-child {
             margin-bottom: 0;
         }
-        & input[type="text"]{
+
+        & input[type="text"] {
             border: 0;
             border-bottom: 1px solid $magazine_element-color;
-            &:first-child{
+
+            &:first-child {
                 border-bottom-right-radius: inherit;
                 border-bottom-left-radius: inherit;
             }
-            &:last-child{
+
+            &:last-child {
                 border-top-right-radius: inherit;
                 border-top-left-radius: inherit;
             }
         }
 
     }
-    .custom-control.custom-checkbox{
-        .custom-control-label{
+
+    .custom-control.custom-checkbox {
+        .custom-control-label {
             cursor: pointer;
             @include user-select(none);
-            &:before, &:after{
+
+            &:before,
+            &:after {
                 top: 0.1rem;
             }
         }
-        .custom-control-input:checked ~ .custom-control-label::before{
+
+        .custom-control-input:checked~.custom-control-label::before {
             border-color: #0498e0;
             background-color: #0498e0;
         }
     }
-    .form-control{
+
+    .form-control {
         height: 32px;
     }
 }
-.flex-0_1-left{
+
+.flex-0_1-left {
     flex-grow: 1 !important;
+
     @media (max-device-width: 382px) {
         width: 100%;
     }
 }
-.flex-100_2-left{
+
+.flex-100_2-left {
     flex-grow: 100 !important;
 }
