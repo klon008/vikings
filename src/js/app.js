@@ -67,7 +67,61 @@ document.addEventListener('DOMContentLoaded', () => {
     dots: false,
     centerMode: true,
     autoplay: true,
-    arrows: true
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1355,
+        settings: {
+          slidesToShow: 9,
+        }
+      },
+      {
+        breakpoint: 1161,
+        settings: {
+          slidesToShow: 7,
+        }
+      },
+      {
+        breakpoint: 999,
+        settings: {
+          slidesToShow: 5,
+        }
+      },
+      {
+        breakpoint: 832,
+        settings: {
+          slidesToShow: 5,
+        }
+      },
+      {
+        breakpoint: 814,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
+      
+      {
+        breakpoint: 753,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 692,
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,
+        }
+      },
+      
+      {
+        breakpoint: 572,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        }
+      },
+    ]
   });
 })
 

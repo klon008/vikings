@@ -106,8 +106,16 @@ $magazine_element-color: #2e323e;
 
         .card-body {
             position: relative;
+            display: flex;
+            flex-direction: column;
+            .card-text{
+                flex-grow: 1;
+                .card-text__power{
+                    font-size: 0.9em;
+                }
+            }
         }
-
+        
         .card-footer {
             width: 100%;
             font-family: 'Lato';
