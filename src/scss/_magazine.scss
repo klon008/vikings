@@ -19,19 +19,20 @@ $magazine_element-color: #2e323e;
         cursor: pointer;
 
         &.premium {
-            @include background-image( linear-gradient(bottom,#a1812e 0%,#cfad56 53.76%, #f4de8b 100%));
+            @include background-image(linear-gradient(bottom, #a1812e 0%, #cfad56 53.76%, #f4de8b 100%));
             color: #3d2a15 !important;
 
-            .pseudo-premmium{
+            .pseudo-premmium {
                 position: absolute;
                 top: -20px;
                 left: calc(50% - 20px);
                 width: 40px;
                 height: 40px;
             }
-            .icon-premium{
+
+            .icon-premium {
                 position: absolute;
-                top: -65px;
+                
                 left: 50%;
                 margin-left: -45px;
                 width: 90px;
@@ -44,15 +45,35 @@ $magazine_element-color: #2e323e;
                 line-height: 1;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
+                top: -70px;
                 @include transition(top 0.2s ease-in-out);
+                @include animation-name(icon-premium-shadow-out);
+                @include animation-duration(0.2s);
+                @include animation-fill-mode(forwards);
+                @include keyframes(icon-premium-shadow-out) {
+                    from {
+                        top: -70px;
+                        @include filter(drop-shadow(0 2px 2px #333333));
+                        
+                    }
+
+                    to {
+                        top: -65px;
+                        @include filter(drop-shadow(0 0 0 #333333));
+                    }
+                }
             }
-            .star, .orange{
+
+            .star,
+            .orange {
                 color: #8F1D0F !important;
             }
-            .status-icon{
+
+            .status-icon {
                 box-shadow: 1px 1px 2px #3f3f3f7d;
             }
-            .card-footer{
+
+            .card-footer {
                 font-weight: 400;
             }
         }
@@ -60,14 +81,33 @@ $magazine_element-color: #2e323e;
         &:hover {
             transform: translateY(-2px);
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-            .icon-premium{
-                top: -70px;
+
+            .icon-premium {
                 @include filter(drop-shadow(0 2px 2px #333333));
+                @include animation-name(icon-premium-shadow);
+                @include animation-duration(0.2s);
+                @include animation-fill-mode(forwards);
+                
+                @include keyframes(icon-premium-shadow) {
+                    from {
+                        @include filter(drop-shadow(0 0 0 #333333));
+                        top: -65px;
+                    }
+
+                    to {
+                        @include filter(drop-shadow(0 2px 2px #333333));
+                        top: -70px;
+                    }
+                }
             }
+
+
         }
-        .card-body{
+
+        .card-body {
             position: relative;
         }
+
         .card-footer {
             width: 100%;
             font-family: 'Lato';

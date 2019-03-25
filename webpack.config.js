@@ -101,8 +101,7 @@ const config = {
                         options: {
                             sourceMap: true,
                             resources: [
-                                path.resolve(__dirname, 'node_modules/compass-mixins/lib/_compass.scss'),
-                                path.resolve(__dirname, 'node_modules/compass-mixins/lib/scss.scss'),
+                                path.resolve(__dirname, 'node_modules/compass-mixins/lib/_animate.scss')
                             ],
 
                         }
