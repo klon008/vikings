@@ -11,9 +11,11 @@ body.load
         include pug_includes/_sidebar
         .content-body#content-body
             main
-                include pug_includes/_slideshow
-                include pug_includes/_magazine_page
-                footer
+                .scroll-content.flex-grow-1.flex-shrink-0
+                    .pb-4
+                        include pug_includes/_slideshow
+                        include pug_includes/_magazine_page
+                footer.flex-grow-0.flex-shrink-0
                     nav.footer-nav
                         .footer-link
                             a Связаться с нами

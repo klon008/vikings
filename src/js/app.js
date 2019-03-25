@@ -15,7 +15,7 @@ import "bootstrap/scss/bootstrap.scss"; //css часть бутстрапа
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css'
 import '../scss/scss.scss' //Мой css
-import '../img/icons/icons.css'//Подгружаем иконки @FIXME перенисти все иконки в ЛИЧНЫЙ иконочный шрифт
+import '../img/icons/icons.css' //Подгружаем иконки @FIXME перенисти все иконки в ЛИЧНЫЙ иконочный шрифт
 
 import './undr/leftbar.js'
 
@@ -52,10 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  var MainContentOverlay = OverlayScrollbars(document.getElementsByTagName('main'), {
+  var MainContentOverlay = OverlayScrollbars(document.querySelector('main .scroll-content'), {
     scrollbars: {
       autoHide: "leave",
-    }
+    },
+    overflowBehavior: {
+      x: "hidden"
+    },
+    paddingAbsolute: false
   });
   $(".slick").slick({
     slidesToShow: 11,

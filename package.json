@@ -70,7 +70,7 @@
     "clean": "rimraf ./public && mkdirp ./public",
     "git": "git subtree push --prefix public origin gh-pages",
     "genres": "node ./my_sources/python/generate_img.js",
-    "appcli": "node ./my_sources/python/app_cli.js"
+    "utils": "node ./utils/myutils.js"
   },
   "keywords": [
     "Vikings",

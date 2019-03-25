@@ -1,10 +1,10 @@
 @font-face {
     font-family: "icons";
-    src: url("./icons.eot?346498ed7caf159c8f31be8e38510448?#iefix") format("embedded-opentype"),
-url("./icons.woff2?346498ed7caf159c8f31be8e38510448") format("woff2"),
-url("./icons.woff?346498ed7caf159c8f31be8e38510448") format("woff"),
-url("./icons.ttf?346498ed7caf159c8f31be8e38510448") format("truetype"),
-url("./icons.svg?346498ed7caf159c8f31be8e38510448#icons") format("svg");
+    src: url("./icons.eot?bc5b324f95e10bf1705683604a8041b3?#iefix") format("embedded-opentype"),
+url("./icons.woff2?bc5b324f95e10bf1705683604a8041b3") format("woff2"),
+url("./icons.woff?bc5b324f95e10bf1705683604a8041b3") format("woff"),
+url("./icons.ttf?bc5b324f95e10bf1705683604a8041b3") format("truetype"),
+url("./icons.svg?bc5b324f95e10bf1705683604a8041b3#icons") format("svg");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -33,18 +33,21 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 .icon-language-solid:before {
     content: "\f105";
 }
-.icon-settings-cog:before {
+.icon-Premium:before {
     content: "\f106";
 }
-.icon-star_bordered:before {
+.icon-settings-cog:before {
     content: "\f107";
 }
-.icon-star_half:before {
+.icon-star_bordered:before {
     content: "\f108";
 }
-.icon-star_outline:before {
+.icon-star_half:before {
     content: "\f109";
 }
-.icon-star:before {
+.icon-star_outline:before {
     content: "\f10a";
+}
+.icon-star:before {
+    content: "\f10b";
 }

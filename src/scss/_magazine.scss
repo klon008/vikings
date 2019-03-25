@@ -19,12 +19,33 @@ $magazine_element-color: #2e323e;
         cursor: pointer;
 
         &.premium {
-            // background : #ca942a;
             @include background-image( linear-gradient(bottom,#a1812e 0%,#cfad56 53.76%, #f4de8b 100%));
-            // text-shadow: 1px 1px 2px #3a3a3a;
             color: #3d2a15 !important;
 
-            
+            .pseudo-premmium{
+                position: absolute;
+                top: -20px;
+                left: calc(50% - 20px);
+                width: 40px;
+                height: 40px;
+            }
+            .icon-premium{
+                position: absolute;
+                top: -65px;
+                left: 50%;
+                margin-left: -45px;
+                width: 90px;
+                height: 90px;
+                font-family: icons !important;
+                font-style: normal;
+                font-weight: normal !important;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                @include transition(top 0.2s ease-in-out);
+            }
             .star, .orange{
                 color: #8F1D0F !important;
             }
@@ -39,8 +60,14 @@ $magazine_element-color: #2e323e;
         &:hover {
             transform: translateY(-2px);
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            .icon-premium{
+                top: -70px;
+                @include filter(drop-shadow(0 2px 2px #333333));
+            }
         }
-
+        .card-body{
+            position: relative;
+        }
         .card-footer {
             width: 100%;
             font-family: 'Lato';
