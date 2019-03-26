@@ -16,6 +16,7 @@ $magazine_element-color: #2e323e;
         padding: 0 !important;
         border: none;
         transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        will-change: auto;
         cursor: pointer;
 
         &.premium {

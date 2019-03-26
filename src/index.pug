@@ -4,12 +4,11 @@ head
     meta(name="viewport" content="width=device-width,initial-scale=1")
     title Викинги - информационный портал.
 body.load
-    
-    include pug_includes/_topbar
-    
     .wrapper
         include pug_includes/_sidebar
         .content-body#content-body
+            include pug_includes/_topbar
+            
             main
                 .scroll-content.flex-grow-1.flex-shrink-0
                     .pb-4
@@ -25,8 +24,8 @@ body.load
                             a Лицензионное соглашение
                         .footer-link
                             a Улучшение сайта
-
-        include pug_includes/_right-sidebar
+    include pug_includes/_right-sidebar
+        
     //-#background
     link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous")
     //-link(rel="stylesheet" href="https://storage.googleapis.com/non-spec-apps/mio-icons/latest/outline.css")

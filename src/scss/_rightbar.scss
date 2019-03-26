@@ -5,19 +5,22 @@
 }
 
 .right-side-chat {
+    z-index: 1;
     background-color: #f5f5f5;
-    height: calc(100vh - #{$top-bar-height});
-    position: fixed;
-    top: $top-bar-height;
+    height: 100%;
+    position: absolute;
+    top: 0;
     right: 0;
     width: $right-bar-width;
     overflow-y: auto;
-    padding-top: 10px;
-
+    @include transition(right $leftbar_time_animation $leftbar_func_anumation);
     & .os-scrollbar.os-scrollbar-vertical {
         width: 6px !important;
         padding-right: 0;
         margin-right: 0;
+    }
+    &.collapsed-right{
+        right: -58px;
     }
 }
 
@@ -84,5 +87,17 @@
         background-color: #f44336;
     }
 }
-
-.right-side-chat__wrap {}
+.right-element{
+    width: $right-bar-width;
+    height: $top-bar-height;
+    background-color: lighten($topbar-background, 10%);
+    border: 0;
+    border-radius: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 5;
+}
+.right-side-chat__wrap {
+    margin-top: $top-bar-height;
+}

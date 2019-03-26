@@ -6,12 +6,6 @@
 $leftbar_time_animation: 0.5s;
 $leftbar_func_anumation: ease-in-out;
 
-body>header{
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-}
 .navbar{
   height: $top-bar-height;
   padding: 0;
@@ -31,11 +25,9 @@ body>header{
     padding: 0;
     flex-wrap: nowrap;
     @include transition(width $leftbar_time_animation $leftbar_func_anumation);
+    will-change: auto;
     &>*{
       margin-right: 0.6em;
-      &:last-child{
-        margin-right: 0;
-      }
     }
   }
   .form-inline{
@@ -65,14 +57,12 @@ body>header{
   align-items: stretch;
 }
 .navbar > .container-fluid.topbar-flex{
-  padding-left: $left-bar-width;
   height: 100%;
   
   @include transition(padding-left $leftbar_time_animation $leftbar_func_anumation);
   
   @include opacity(1);
   &.collapsed-left{
-    padding-left: 95px;
     .logo__sitename{
       width: 0;
       @include opacity(0);
@@ -197,10 +187,6 @@ body>header{
     border-radius: 0;
     i.material-icons, i.material-icons-new{
       height:20px;
-    }
-    &.right-element{
-      width: $right-bar-width;
-      background-color: lighten($topbar-background, 10%);
     }
   }
   display: flex;

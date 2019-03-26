@@ -18,6 +18,7 @@ import '../scss/scss.scss' //Мой css
 import '../img/icons/icons.css' //Подгружаем иконки @FIXME перенисти все иконки в ЛИЧНЫЙ иконочный шрифт
 
 import './undr/leftbar.js'
+import './undr/rightbar_chat.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   let body = document.getElementsByTagName("body")[0];

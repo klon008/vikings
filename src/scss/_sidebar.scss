@@ -13,7 +13,7 @@ $collapsed-width: 95px;
     transition: all 0.3s;
     overflow: auto;
     @include transition(width $leftbar_time_animation $leftbar_func_anumation);
-
+    will-change: auto;
     &.collapsed-left {
         width: $collapsed-width;
         .sidebar__list li{
