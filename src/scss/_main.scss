@@ -1,5 +1,3 @@
-$leftbar_time_animation: 0.5s;
-$leftbar_func_anumation: ease-in-out;
 $collapsed-width: 95px;
 .content-body {
     margin-left: $left-bar-width;
@@ -23,6 +21,7 @@ main {
     @include transition(padding-right $leftbar_time_animation $leftbar_func_anumation);
     will-change: padding-right;
     -webkit-transform: translate3d(0,0,0);
+    background-color: #3c434d;
     &>.os-padding>.os-vewport>.os-content{
         display: flex;
         flex-direction: column;

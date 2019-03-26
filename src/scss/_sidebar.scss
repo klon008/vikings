@@ -1,6 +1,5 @@
-$leftbar_time_animation: 0.5s;
-$leftbar_func_anumation: ease-in-out;
 $collapsed-width: 95px;
+
 #sidebar {
     width: $left-bar-width;
     background-color: #2e323e;
@@ -14,30 +13,40 @@ $collapsed-width: 95px;
     overflow: auto;
     @include transition(width $leftbar_time_animation $leftbar_func_anumation);
     will-change: auto;
+
     &.collapsed-left {
+
         width: $collapsed-width;
-        .sidebar__list li{
+
+        .sidebar__list li {
             text-align: center;
             padding-left: 10px;
         }
-        .sidebar__content{
+
+        .sidebar__content {
             padding-top: 0;
         }
-        .sidebar__user{
+
+        .sidebar__user {
             padding: 0;
         }
-        .sidebar__usericon{
-            top:0;
+
+        .sidebar__usericon {
+            top: 0;
             background-color: transparent;
-            
+
         }
-        .sidebar__avatar{
+
+        .sidebar__avatar {
             width: 40px;
             height: 40px;
         }
-        .sidebar__username, .sidebar__useremail{
+
+        .sidebar__username,
+        .sidebar__useremail {
             width: 0;
         }
+
         .nav-link-title {
             width: 0;
             @include opacity(0);
@@ -58,6 +67,7 @@ $collapsed-width: 95px;
 
         .group-title {
             text-align: center;
+
             span {
                 width: 0;
                 height: 0;
@@ -72,6 +82,15 @@ $collapsed-width: 95px;
                 border-top: 2px solid;
                 opacity: .2;
             }
+        }
+
+        .logo__sitename {
+            width: 0;
+            @include opacity(0);
+        }
+
+        .topbar-left {
+            width: 95px;
         }
     }
 
@@ -100,6 +119,7 @@ $collapsed-width: 95px;
     text-align: center;
     padding: 13px 0 56px;
     @include transition(padding $leftbar_time_animation $leftbar_func_anumation);
+
     &>* {
         white-space: nowrap;
         word-wrap: normal;
@@ -115,10 +135,12 @@ $collapsed-width: 95px;
     color: rgba(255, 255, 255, .5);
 }
 
-.sidebar__username, .sidebar__useremail{
+.sidebar__username,
+.sidebar__useremail {
     display: inline-block;
     overflow: hidden;
 }
+
 .sidebar__usericon {
     position: absolute;
     top: 74px;
@@ -140,7 +162,7 @@ $collapsed-width: 95px;
 }
 
 .vertical-menu-block {
-    ul{
+    ul {
         margin-bottom: 0;
     }
 }
@@ -156,6 +178,7 @@ $collapsed-width: 95px;
         width: 100%;
         text-align: left;
         padding-top: 1rem;
+
         span {
             display: inline-block;
             overflow: hidden;
@@ -245,6 +268,7 @@ $collapsed-width: 95px;
         margin-left: auto;
         @include transition(margin-left 0.5s ease-in-out);
         min-width: auto;
+
         &+.material-icons,
         &+.material-icons-new {
             margin-left: 5px;
@@ -303,4 +327,55 @@ $collapsed-width: 95px;
             display: inline-block;
         }
     }
+}
+
+.topbar-left {
+    @include transition(width $leftbar_time_animation $leftbar_func_anumation);
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: $left-bar-width;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: $topbar-background;
+
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: inherit;
+        /* blue colors for links too */
+        text-decoration: inherit;
+        /* no underline */
+    }
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    filter: invert(100%);
+}
+
+.logo__sitename {
+
+    @include transition(width $leftbar_time_animation $leftbar_func_anumation);
+    @include transition-property(opacity);
+    @include opacity(1);
+
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+
+    margin-left: 12px;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: .4px;
+    line-height: normal;
+    color: #FFFFFF;
+
 }

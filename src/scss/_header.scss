@@ -4,7 +4,7 @@
   $right-bar-width: 58px !global;
 }
 $leftbar_time_animation: 0.5s;
-$leftbar_func_anumation: ease-in-out;
+$leftbar_func_anumation: ease;
 
 .navbar{
   height: $top-bar-height;
@@ -12,6 +12,7 @@ $leftbar_func_anumation: ease-in-out;
   width: 100%;
   margin-right: 0px;
   margin-left: 0px;
+  -webkit-transform: translateZ(0);
   &.navbar-dark{
     color: rgba(255,255,255,.7);
   }
@@ -62,15 +63,7 @@ $leftbar_func_anumation: ease-in-out;
   @include transition(padding-left $leftbar_time_animation $leftbar_func_anumation);
   
   @include opacity(1);
-  &.collapsed-left{
-    .logo__sitename{
-      width: 0;
-      @include opacity(0);
-    }
-    .topbar-left{
-      width: 95px;
-    }
-  }
+  
 }
 
 .infostatususers{
@@ -108,45 +101,7 @@ $leftbar_func_anumation: ease-in-out;
   }
   margin-right: 0.45em;
 }
-.topbar-left{
-  @include transition(width $leftbar_time_animation $leftbar_func_anumation);
-  left: 0;
-  top:0;
-  position: fixed;
-  width: $left-bar-width;
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  background-color: $topbar-background;
 
-}
-.navbar .topbar-left{
-  margin-right: 0;
-  padding-left: $left-bar-padding;
-}
-.logo{
-  display: flex;
-  align-items: center;
-  filter: invert(100%);
-}
-.logo__sitename{
-  
-  @include transition(width $leftbar_time_animation $leftbar_func_anumation);
-  @include transition-property(opacity);
-  @include opacity(1);
-
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  word-wrap: normal;
-  overflow: hidden;
-
-  margin-left: 12px;
-  font-size: 16px;
-  font-weight: 300;
-  letter-spacing: .4px;
-  line-height: normal;
-}
 .navbar{
   a,
   a:link,
