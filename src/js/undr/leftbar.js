@@ -1,6 +1,6 @@
 ;(($)=>{
     let leftBarShowing = true;
-    const leftBar = $('#sidebar')
+    const leftBar = $('#left_bar')
     const topbar = $('#topbar')
     const body = $('#content-body')
     $('#leftBarToggler').click((e)=>{

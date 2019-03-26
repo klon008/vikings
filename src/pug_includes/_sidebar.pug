@@ -1,5 +1,5 @@
 aside
-  nav#sidebar(data-simplebar)
+  nav#left_bar(data-simplebar)
     .topbar-left
       a.logo(href='/')
           img(src='https://vikings.life/wp-content/uploads/2019/02/cropped-Zero-1.png' style='height: 24px; margin-bottom: 2px;')
@@ -7,175 +7,176 @@ aside
           span.header_logo_text Название сайта
       button#leftBarToggler.navbar-toggler.button-menu-mobile.waves-effect.waves-light.rgba-white-slight(type='button' aria-label='Toggle navigation')
           span.material-icons-new.outline-menu.icon-white
-    .sidebar__header
-      .sidebar__user
-          h3.sidebar__username Charlie Adams
-          p.sidebar__useremail adams.charlie@mail.com
-      .sidebar__usericon
-        img.sidebar__avatar(src="https://kwork.ru/files/avatar/large/30/24862-2.jpg")
-    .sidebar__content
-      .vertical-menu-block
-        .group-title
-          span Статистика по ресурсам
-        ul.list-unstyled.components
-          li
-            a(href='#lm_resources_expended' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
-              i.material-icons-new.outline-dashboard.icon-white
-              span.nav-link-title Затрачено ресурсов
-              i.material-icons.arrow keyboard_arrow_right
-            ul#lm_resources_expended.collapse.list-unstyled.sidebar__expanded
-              .resources-grid
-                include _sidebar_resources
-          li
-            a(href='#lm_resources_upgr_expended' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
-              i.material-icons-new.outline-today.icon-white
-              span.nav-link-title Ресурсы для апгрейда
-              i.material-icons.arrow keyboard_arrow_right
-            ul#lm_resources_upgr_expended.collapse.list-unstyled.sidebar__expanded
-              .resources-grid
-                include _sidebar_resources
-          li
-            a(href='#lm_resources_left' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
-              i.material-icons-new.outline-shopping_cart.icon-white
-              span.nav-link-title Осталось собрать
-              i.material-icons.arrow keyboard_arrow_right
-            ul#lm_resources_left.collapse.list-unstyled.sidebar__expanded
-              .resources-grid
-                include _sidebar_resources
+    .sidebar_content_wrpper#left_bar_wrapper
+      .sidebar__header
+        .sidebar__user
+            h3.sidebar__username Charlie Adams
+            p.sidebar__useremail adams.charlie@mail.com
+        .sidebar__usericon
+          img.sidebar__avatar(src="https://kwork.ru/files/avatar/large/30/24862-2.jpg")
+      .sidebar__content
+        .vertical-menu-block
+          .group-title
+            span Статистика по ресурсам
+          ul.list-unstyled.components
+            li
+              a(href='#lm_resources_expended' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
+                i.material-icons-new.outline-dashboard.icon-white
+                span.nav-link-title Затрачено ресурсов
+                i.material-icons.arrow keyboard_arrow_right
+              ul#lm_resources_expended.collapse.list-unstyled.sidebar__expanded
+                .resources-grid
+                  include _sidebar_resources
+            li
+              a(href='#lm_resources_upgr_expended' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
+                i.material-icons-new.outline-today.icon-white
+                span.nav-link-title Ресурсы для апгрейда
+                i.material-icons.arrow keyboard_arrow_right
+              ul#lm_resources_upgr_expended.collapse.list-unstyled.sidebar__expanded
+                .resources-grid
+                  include _sidebar_resources
+            li
+              a(href='#lm_resources_left' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
+                i.material-icons-new.outline-shopping_cart.icon-white
+                span.nav-link-title Осталось собрать
+                i.material-icons.arrow keyboard_arrow_right
+              ul#lm_resources_left.collapse.list-unstyled.sidebar__expanded
+                .resources-grid
+                  include _sidebar_resources
 
-        .group-title
-          span Приложения
-        ul.list-unstyled.components
-          li
-            a(href='#lm_user_config' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
-              i.material-icons-new.outline-person.icon-white
-              span.nav-link-title Мой профиль
-              i.material-icons.arrow keyboard_arrow_right
-            ul#lm_user_config.collapse.list-unstyled.sidebar__expanded
-              .sidebar__list
-                li
-                  a Page1
-                li
-                  a Page2
-          li
-            a(href='#lm_user_cities' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
-              i.material-icons-new.outline-location_city.icon-white
-              span.nav-link-title Мои города
-              i.material-icons.arrow keyboard_arrow_right
-            ul#lm_user_cities.collapse.list-unstyled.sidebar__expanded
-              .sidebar__list
-                li
-                  a Page1
-                li
-                  a Page2
-          li
-            a(href='#lm_user_clans' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
-              i.material-icons-new.outline-group.icon-white
-              span.nav-link-title Мои кланы
-              i.material-icons.arrow keyboard_arrow_right
-            ul#lm_user_clans.collapse.list-unstyled.sidebar__expanded
-              .sidebar__list
-                li
-                  a Page1
-                li
-                  a Page2
-          li
-            a(href='#lm_clans_list' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
-              i.material-icons-new.outline-group.icon-white
-              span.nav-link-title Список кланов
-              i.material-icons.arrow keyboard_arrow_right
-            ul#lm_clans_list.collapse.list-unstyled.sidebar__expanded
-              .sidebar__list
-                li
-                  a Page1
-                li
-                  a Page2
-          li
-            a(href='#lm_special_facilities' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
-              i.material-icons-new.outline-layers.icon-white
-              span.nav-link-title Специальные возможности
-              i.material-icons.arrow keyboard_arrow_right
-            ul#lm_special_facilities.collapse.list-unstyled.sidebar__expanded
-              .sidebar__list
-                li
-                  a Page1
-                li
-                  a Page2
-          li
-            a(href='#lm_academy').sidebar__rootlink
-              i.material-icons-new.outline-school.icon-white
-              span.nav-link-title Академия
-          li
-            a(href='#lm_calendar').sidebar__rootlink
-              i.material-icons-new.outline-today.icon-white
-              span.nav-link-title Календарь
-          li
-            a(href='#lm_my_purchases' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
-              i.material-icons-new.outline-shopping_cart.icon-white
-              span.nav-link-title Мои покупки
-              i.material-icons.arrow keyboard_arrow_right
-            ul#lm_my_purchases.collapse.list-unstyled.sidebar__expanded
-              .sidebar__list
-                li
-                  a Page1
-                li
-                  a Page2
-          li
-            a(href='#lm_push').sidebar__rootlink.sidebar__rootlink__active
-              i.material-icons-new.outline-mail.icon-white
-              span.nav-link-title Оповещения
-              .nav-link-badge 25
-          li
-            a(href='#lm_clan_tasks').sidebar__rootlink
-              i.material-icons-new.outline-mail.icon-white
-              span.nav-link-title Задачи клана
-              .nav-link-badge(style="background-color: rgb(236, 12, 142);") 13
-          li
-            a(href='#lm_chat').sidebar__rootlink
-              i.material-icons-new.outline-chat.icon-white
-              span.nav-link-title Чат
-              .nav-link-badge(style="background-color: rgb(7, 156, 72);") 13
-          li
-            a(href='#lm_files').sidebar__rootlink
-              i.material-icons-new.outline-folder.icon-white
-              span.nav-link-title Мои файлы
-          li
-            a(href='#lm_contacts').sidebar__rootlink
-              i.material-icons-new.outline-account_box.icon-white
-              span.nav-link-title Контакты
-          li
-            a(href='#lm_my_tasks').sidebar__rootlink
-              i.material-icons-new.outline-check_box.icon-white
-              span.nav-link-title Мои задачи
-              .nav-link-badge(style="background-color: rgb(255, 111, 0);") 3 
-          li
-            a(href='#lm_voiting').sidebar__rootlink
-              i.material-icons-new.outline-insert_chart.icon-white
-              span.nav-link-title Голосование
-        .group-title
-          span Дополнительно
-        ul.list-unstyled.components
-          li
-            a(href='#lm_passwords' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
-              i.material-icons-new.outline-lock.icon-white
-              span.nav-link-title Пароли и логины
-              .nav-link-badge(style="background-color: rgb(82, 94, 138);") 10
-              i.material-icons.arrow keyboard_arrow_right
-            ul#lm_passwords.collapse.list-unstyled.sidebar__expanded
-              .sidebar__list
-                li
-                  a Page1
-                li
-                  a Page2
-          li
-            a(href='#lm_reminder').sidebar__rootlink
-              i.material-icons-new.outline-access_alarm.icon-white
-              span.nav-link-title Напоминание
-          li
-            a(href='#lm_faq').sidebar__rootlink
-              i.material-icons help
-              span.nav-link-title F.A.Q
-          li
-            a(href='#lm_newspaper').sidebar__rootlink
-              i.material-icons-new.outline-import_contacts.icon-white
-              span.nav-link-title Газета
+          .group-title
+            span Приложения
+          ul.list-unstyled.components
+            li
+              a(href='#lm_user_config' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
+                i.material-icons-new.outline-person.icon-white
+                span.nav-link-title Мой профиль
+                i.material-icons.arrow keyboard_arrow_right
+              ul#lm_user_config.collapse.list-unstyled.sidebar__expanded
+                .sidebar__list
+                  li
+                    a Page1
+                  li
+                    a Page2
+            li
+              a(href='#lm_user_cities' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
+                i.material-icons-new.outline-location_city.icon-white
+                span.nav-link-title Мои города
+                i.material-icons.arrow keyboard_arrow_right
+              ul#lm_user_cities.collapse.list-unstyled.sidebar__expanded
+                .sidebar__list
+                  li
+                    a Page1
+                  li
+                    a Page2
+            li
+              a(href='#lm_user_clans' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
+                i.material-icons-new.outline-group.icon-white
+                span.nav-link-title Мои кланы
+                i.material-icons.arrow keyboard_arrow_right
+              ul#lm_user_clans.collapse.list-unstyled.sidebar__expanded
+                .sidebar__list
+                  li
+                    a Page1
+                  li
+                    a Page2
+            li
+              a(href='#lm_clans_list' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
+                i.material-icons-new.outline-group.icon-white
+                span.nav-link-title Список кланов
+                i.material-icons.arrow keyboard_arrow_right
+              ul#lm_clans_list.collapse.list-unstyled.sidebar__expanded
+                .sidebar__list
+                  li
+                    a Page1
+                  li
+                    a Page2
+            li
+              a(href='#lm_special_facilities' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
+                i.material-icons-new.outline-layers.icon-white
+                span.nav-link-title Специальные возможности
+                i.material-icons.arrow keyboard_arrow_right
+              ul#lm_special_facilities.collapse.list-unstyled.sidebar__expanded
+                .sidebar__list
+                  li
+                    a Page1
+                  li
+                    a Page2
+            li
+              a(href='#lm_academy').sidebar__rootlink
+                i.material-icons-new.outline-school.icon-white
+                span.nav-link-title Академия
+            li
+              a(href='#lm_calendar').sidebar__rootlink
+                i.material-icons-new.outline-today.icon-white
+                span.nav-link-title Календарь
+            li
+              a(href='#lm_my_purchases' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
+                i.material-icons-new.outline-shopping_cart.icon-white
+                span.nav-link-title Мои покупки
+                i.material-icons.arrow keyboard_arrow_right
+              ul#lm_my_purchases.collapse.list-unstyled.sidebar__expanded
+                .sidebar__list
+                  li
+                    a Page1
+                  li
+                    a Page2
+            li
+              a(href='#lm_push').sidebar__rootlink.sidebar__rootlink__active
+                i.material-icons-new.outline-mail.icon-white
+                span.nav-link-title Оповещения
+                .nav-link-badge 25
+            li
+              a(href='#lm_clan_tasks').sidebar__rootlink
+                i.material-icons-new.outline-mail.icon-white
+                span.nav-link-title Задачи клана
+                .nav-link-badge(style="background-color: rgb(236, 12, 142);") 13
+            li
+              a(href='#lm_chat').sidebar__rootlink
+                i.material-icons-new.outline-chat.icon-white
+                span.nav-link-title Чат
+                .nav-link-badge(style="background-color: rgb(7, 156, 72);") 13
+            li
+              a(href='#lm_files').sidebar__rootlink
+                i.material-icons-new.outline-folder.icon-white
+                span.nav-link-title Мои файлы
+            li
+              a(href='#lm_contacts').sidebar__rootlink
+                i.material-icons-new.outline-account_box.icon-white
+                span.nav-link-title Контакты
+            li
+              a(href='#lm_my_tasks').sidebar__rootlink
+                i.material-icons-new.outline-check_box.icon-white
+                span.nav-link-title Мои задачи
+                .nav-link-badge(style="background-color: rgb(255, 111, 0);") 3 
+            li
+              a(href='#lm_voiting').sidebar__rootlink
+                i.material-icons-new.outline-insert_chart.icon-white
+                span.nav-link-title Голосование
+          .group-title
+            span Дополнительно
+          ul.list-unstyled.components
+            li
+              a(href='#lm_passwords' data-toggle='collapse' aria-expanded='false').sidebar__rootlink
+                i.material-icons-new.outline-lock.icon-white
+                span.nav-link-title Пароли и логины
+                .nav-link-badge(style="background-color: rgb(82, 94, 138);") 10
+                i.material-icons.arrow keyboard_arrow_right
+              ul#lm_passwords.collapse.list-unstyled.sidebar__expanded
+                .sidebar__list
+                  li
+                    a Page1
+                  li
+                    a Page2
+            li
+              a(href='#lm_reminder').sidebar__rootlink
+                i.material-icons-new.outline-access_alarm.icon-white
+                span.nav-link-title Напоминание
+            li
+              a(href='#lm_faq').sidebar__rootlink
+                i.material-icons help
+                span.nav-link-title F.A.Q
+            li
+              a(href='#lm_newspaper').sidebar__rootlink
+                i.material-icons-new.outline-import_contacts.icon-white
+                span.nav-link-title Газета

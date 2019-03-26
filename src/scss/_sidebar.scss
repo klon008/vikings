@@ -1,16 +1,15 @@
 $collapsed-width: 95px;
 
-#sidebar {
+#left_bar {
     width: $left-bar-width;
     background-color: #2e323e;
-    position: fixed;
-    top: $top-bar-height;
+    position: absolute;
     left: 0;
-    height: calc(100vh - #{$top-bar-height});
+    height: 100%;
     z-index: 9;
     color: #ffffff;
     transition: all 0.3s;
-    overflow: auto;
+    overflow: hidden;
     @include transition(width $leftbar_time_animation $leftbar_func_anumation);
     will-change: auto;
 
@@ -166,14 +165,18 @@ $collapsed-width: 95px;
         margin-bottom: 0;
     }
 }
-
+.sidebar_content_wrpper{
+    margin-top: $top-bar-height;
+    height: 100%;
+}
 .sidebar__content {
     padding-top: 27%;
     white-space: nowrap;
     font-size: 14px;
     font-weight: 300;
     color: $main-font-color;
-
+    overflow: auto;
+    width: auto;
     .group-title {
         width: 100%;
         text-align: left;
@@ -357,6 +360,7 @@ $collapsed-width: 95px;
     display: flex;
     align-items: center;
     filter: invert(100%);
+    padding-left: 1em;
 }
 
 .logo__sitename {

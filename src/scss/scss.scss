@@ -108,3 +108,4 @@ body{
   @include transition(none !important);
   @include animation-duration(0s);
 }
+@import "./adaptive_st";

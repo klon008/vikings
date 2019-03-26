@@ -35,14 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
     } else { // webkit - safari/chrome
       alert('Нажмите ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') + ' + D чтобы добавить сайт в закладки.');
     }
-
   })
   $('[data-toggle="tooltip"]').tooltip({
     container: 'body',
     boundary: 'window',
     paddingAbsolute: true
   });
-  for (var scrl of ['sidebar', 'right-side-chat']) {
+  for (var scrl of ['left_bar_wrapper', 'right-side-chat']) {
     OverlayScrollbars(document.getElementById(scrl), {
       overflowBehavior: {
         x: "hidden"
