@@ -12,7 +12,8 @@ $collapsed-width: 95px;
     overflow: hidden;
     @include transition(width $leftbar_time_animation $leftbar_func_anumation);
     will-change: auto;
-
+    display: flex;
+    flex-direction: column;
     @include for-desktop-up {
         &.collapsed-left {
 
@@ -111,7 +112,11 @@ $collapsed-width: 95px;
         @include opacity(1);
     }
 }
-
+.sidebar_content_wrpper{
+    height: 100%;
+    flex: 1 0;
+    padding-bottom: 2em;
+}
 .sidebar__user {
     box-sizing: content-box;
     display: flex;
@@ -175,6 +180,7 @@ $collapsed-width: 95px;
 
 .sidebar__content {
     padding-top: 27%;
+    padding-bottom: 2em;
     white-space: nowrap;
     font-size: 14px;
     font-weight: 300;
@@ -348,7 +354,7 @@ $collapsed-width: 95px;
     align-items: stretch;
     justify-content: space-between;
     background-color: $topbar-background;
-
+    flex: 0 0;
     a,
     a:link,
     a:visited,
