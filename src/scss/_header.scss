@@ -13,6 +13,7 @@ $leftbar_func_anumation: ease;
   margin-right: 0px;
   margin-left: 0px;
   -webkit-transform: translateZ(0);
+  z-index: 1;
   &.navbar-dark{
     color: rgba(255,255,255,.7);
   }
@@ -29,6 +30,9 @@ $leftbar_func_anumation: ease;
     will-change: auto;
     &>*{
       margin-right: 0.6em;
+      &:last-child{
+        margin-right: 0;
+      }
     }
   }
   .form-inline{
@@ -143,6 +147,9 @@ $leftbar_func_anumation: ease;
     i.material-icons, i.material-icons-new{
       height:20px;
     }
+  }
+  .dropdown-menu{
+    border-top: none;
   }
   display: flex;
   align-items: center;

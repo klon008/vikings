@@ -13,83 +13,85 @@ $collapsed-width: 95px;
     @include transition(width $leftbar_time_animation $leftbar_func_anumation);
     will-change: auto;
 
-    &.collapsed-left {
+    @include for-desktop-up {
+        &.collapsed-left {
 
-        width: $collapsed-width;
+            width: $collapsed-width;
 
-        .sidebar__list li {
-            text-align: center;
-            padding-left: 10px;
-        }
+            .sidebar__list li {
+                text-align: center;
+                padding-left: 10px;
+            }
 
-        .sidebar__content {
-            padding-top: 0;
-        }
+            .sidebar__content {
+                padding-top: 0;
+            }
 
-        .sidebar__user {
-            padding: 0;
-        }
+            .sidebar__user {
+                padding: 0;
+            }
 
-        .sidebar__usericon {
-            top: 0;
-            background-color: transparent;
+            .sidebar__usericon {
+                top: 0;
+                background-color: transparent;
 
-        }
+            }
 
-        .sidebar__avatar {
-            width: 40px;
-            height: 40px;
-        }
+            .sidebar__avatar {
+                width: 40px;
+                height: 40px;
+            }
 
-        .sidebar__username,
-        .sidebar__useremail {
-            width: 0;
-        }
+            .sidebar__username,
+            .sidebar__useremail {
+                width: 0;
+            }
 
-        .nav-link-title {
-            width: 0;
-            @include opacity(0);
-        }
+            .nav-link-title {
+                width: 0;
+                @include opacity(0);
+            }
 
-        .sidebar__rootlink {
-            justify-content: start;
-            padding-left: 20px;
+            .sidebar__rootlink {
+                justify-content: start;
+                padding-left: 20px;
 
-            i.arrow {
+                i.arrow {
+                    margin-left: 0;
+                }
+            }
+
+            .nav-link-badge {
                 margin-left: 0;
             }
-        }
 
-        .nav-link-badge {
-            margin-left: 0;
-        }
+            .group-title {
+                text-align: center;
 
-        .group-title {
-            text-align: center;
+                span {
+                    width: 0;
+                    height: 0;
+                    @include transition(width, height $leftbar_time_animation $leftbar_func_anumation);
+                }
 
-            span {
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    position: relative;
+                    min-width: 1.6rem;
+                    border-top: 2px solid;
+                    opacity: .2;
+                }
+            }
+
+            .logo__sitename {
                 width: 0;
-                height: 0;
-                @include transition(width, height $leftbar_time_animation $leftbar_func_anumation);
+                @include opacity(0);
             }
 
-            &:before {
-                content: '';
-                display: inline-block;
-                position: relative;
-                min-width: 1.6rem;
-                border-top: 2px solid;
-                opacity: .2;
+            .topbar-left {
+                width: 95px;
             }
-        }
-
-        .logo__sitename {
-            width: 0;
-            @include opacity(0);
-        }
-
-        .topbar-left {
-            width: 95px;
         }
     }
 
@@ -119,7 +121,7 @@ $collapsed-width: 95px;
     padding: 13px 0 56px;
     @include transition(padding $leftbar_time_animation $leftbar_func_anumation);
 
-    &>* {
+    & > * {
         white-space: nowrap;
         word-wrap: normal;
     }
@@ -165,10 +167,12 @@ $collapsed-width: 95px;
         margin-bottom: 0;
     }
 }
-.sidebar_content_wrpper{
+
+.sidebar_content_wrapper {
     margin-top: $top-bar-height;
     height: 100%;
 }
+
 .sidebar__content {
     padding-top: 27%;
     white-space: nowrap;
@@ -177,6 +181,7 @@ $collapsed-width: 95px;
     color: $main-font-color;
     overflow: auto;
     width: auto;
+
     .group-title {
         width: 100%;
         text-align: left;
@@ -237,12 +242,12 @@ $collapsed-width: 95px;
         background-color: #282c36;
     }
 
-    &>*:first-child {
+    & > *:first-child {
         margin-right: 0.9em;
         flex-shrink: 0;
     }
 
-    &>i.arrow {
+    & > i.arrow {
         @include transition-property(transform, margin-left);
         @include transition-duration(.25s);
         @include transition-timing-function(ease-in-out);
@@ -253,14 +258,15 @@ $collapsed-width: 95px;
     }
 
     &[aria-expanded="true"] {
-        &>i.arrow {
+        & > i.arrow {
             transform: rotate(90deg);
         }
     }
 
     & .material-icons-new,
     & .material-icons {
-        &.arrow {}
+        &.arrow {
+        }
 
         height: 16px;
         width: 16px;
@@ -272,8 +278,8 @@ $collapsed-width: 95px;
         @include transition(margin-left 0.5s ease-in-out);
         min-width: auto;
 
-        &+.material-icons,
-        &+.material-icons-new {
+        & + .material-icons,
+        & + .material-icons-new {
             margin-left: 5px;
         }
     }
@@ -299,7 +305,7 @@ $collapsed-width: 95px;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px;
 
-    &>* {
+    & > * {
         text-align: center;
     }
 }
@@ -336,7 +342,7 @@ $collapsed-width: 95px;
     @include transition(width $leftbar_time_animation $leftbar_func_anumation);
     left: 0;
     top: 0;
-    position: fixed;
+    position: relative;
     width: $left-bar-width;
     display: flex;
     align-items: stretch;

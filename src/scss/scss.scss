@@ -1,4 +1,4 @@
-$top-bar-height: 53px;
+$top-bar-height: 58px;
 $left-bar-width: 240px;
 $left-bar-padding: 10px;
 $topbar-background: #1e212a;
@@ -6,6 +6,11 @@ $sidebar-background: #2d323e;
 $main-font-color: #ffffff;
 $right-bar-width: 58px;
 $body-bg-color:  #3c434d;
+@mixin collapsed(){
+  .collapsed-left{
+    @content;
+  }
+}
 
 button{
   background-color: transparent;
@@ -32,7 +37,7 @@ body{
   background-color: $body-bg-color;
   overflow: hidden;
 }
-
+@import "./adaptive_st";
 @import "./my_mixins";
 @import "./fonts";
 @import "./waves";
@@ -108,4 +113,3 @@ body{
   @include transition(none !important);
   @include animation-duration(0s);
 }
-@import "./adaptive_st";

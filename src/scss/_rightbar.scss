@@ -4,24 +4,44 @@
     $right-bar-width: 58px !global;
 }
 
-.right-side-chat {
-    z-index: 1;
-    background-color: #f5f5f5;
+.right-side-chat__wrapper{
     height: 100%;
     position: absolute;
     top: 0;
     right: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: row;
+    @include transition(width $leftbar_time_animation $leftbar_func_anumation);
+    z-index: 2;
+    overflow: hidden;
     width: $right-bar-width;
-    overflow-y: auto;
-    @include transition(right $leftbar_time_animation $leftbar_func_anumation);
-    & .os-scrollbar.os-scrollbar-vertical {
-        width: 6px !important;
-        padding-right: 0;
-        margin-right: 0;
-    }
     &.collapsed-right{
-        right: -58px;
+        right: 0;
+        width: 360px;
     }
+}
+.rs_chat-ui__wrapper{
+    height: 100%;
+    min-width: 302px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0;
+}
+.rs_chat-ui__content{
+    flex-grow: 1;
+    border-left: 1px solid rgba(50, 50, 50, 0.1);
+}
+.rs_users__wrapper{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: $right-bar-width;
+}
+.right-side-chat__users {
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 100%;
 }
 
 .right-side-chat__userpic {
@@ -87,17 +107,42 @@
         background-color: #f44336;
     }
 }
+
+.rs_chat-ui__top, .rs_users__top{
+    height: $top-bar-height;
+    background-color: #333848;
+    z-index: 2;
+}
+
+.rs_chat-ui__top{
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    vertical-align: middle;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+}
+
 .right-element{
     width: $right-bar-width;
-    height: $top-bar-height;
+    height: $top-bar-height !important;
     background-color: lighten($topbar-background, 10%);
     border: 0;
     border-radius: 0;
-    position: fixed;
+    position: relative;
     top: 0;
     right: 0;
+    flex-shrink: 0;
     z-index: 5;
 }
 .right-side-chat__wrap {
-    margin-top: $top-bar-height;
+    width: 360px;
+}
+.rs_chat-patch{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }

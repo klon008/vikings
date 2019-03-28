@@ -1,6 +1,15 @@
-aside
-    button(type="button").btn.no-outline.text-light.waves-effect.waves-light.right-element#right_chat_btn
-                i.far.fa-comment-alt
-    div.right-side-chat#right-side-chat
-        .right-side-chat__wrap
+aside.right-side-chat__wrapper#right-side-chat
+    .rs_users__wrapper
+        .rs_users__top
+            button(type="button").btn.no-outline.text-light.waves-effect.waves-light.right-element#right_chat_btn
+                        i.far.fa-comment-alt
+        div.right-side-chat__users#right-side-chat__users
             include _right_sidebar_users
+    .rs_chat-ui__wrapper
+        .rs_chat-ui__top
+            span Чат викингов
+        .rs_chat-ui__content
+            .rs_chat-patch
+                div
+                    img(src=require('../img/Icons-Tech-Comm.png'))
+                div Выберите контакт, чтобы начать разговор.

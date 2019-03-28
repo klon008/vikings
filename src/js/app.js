@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     boundary: 'window',
     paddingAbsolute: true
   });
-  for (var scrl of ['left_bar_wrapper', 'right-side-chat']) {
+  for (var scrl of ['left_bar_wrapper', 'right-side-chat__users']) {
     OverlayScrollbars(document.getElementById(scrl), {
       overflowBehavior: {
         x: "hidden"

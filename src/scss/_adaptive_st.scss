@@ -27,3 +27,29 @@
         @content;
     }
 }
+
+@include for-phone-only(){
+    .content-body>header{
+        display: none;
+    }
+    #left_bar{
+        width: 100% !important;
+        
+        .topbar-left{
+            width: 100%;
+        }
+        @include collapsed{
+            width: 100%;
+            .topbar-left{
+                width: 100%
+            }
+            .logo__sitename{
+                width: auto;
+                opacity: 1;
+            }
+        }
+    }
+    .right-side-chat__wrapper{
+        display: none;
+    }
+}
