@@ -657,11 +657,11 @@
   </div>
 <aside class="right-side-chat__wrapper" id="right-side-chat">
   <div class="rs_users__wrapper">
-    <div class="rs_users__top">
+    <div class="rs_users__top"><img class="selected_user d-none" src="https://randomuser.me/api/portraits/men/63.jpg">
       <button class="btn no-outline text-light waves-effect waves-light right-element" type="button" id="right_chat_btn"><i class="far fa-comment-alt"></i></button>
     </div>
     <div class="right-side-chat__users" id="right-side-chat__users">
-<div class="right-side-chat__user" data-toggle="tooltip" title="jacob rasmussen" data-placement="left"><img class="right-side-chat__userpic" src="https://randomuser.me/api/portraits/men/63.jpg">
+<div class="right-side-chat__user" data-toggle="tooltip" title="jacob rasmussen" data-placement="left" data-user-id="user_1"><img class="right-side-chat__userpic" src="https://randomuser.me/api/portraits/men/63.jpg">
   <div class="status-icon online"></div>
 </div>
 <div class="right-side-chat__user" data-toggle="tooltip" title="thomas harcourt" data-placement="left"><img class="right-side-chat__userpic" src="https://randomuser.me/api/portraits/men/5.jpg">
@@ -682,7 +682,7 @@
 <div class="right-side-chat__user" data-toggle="tooltip" title="nicolas aguilar" data-placement="left"><img class="right-side-chat__userpic" src="https://randomuser.me/api/portraits/men/24.jpg">
   <div class="status-icon offline"></div>
 </div>
-<div class="right-side-chat__user" data-toggle="tooltip" title="آیلین زارعی" data-placement="left"><img class="right-side-chat__userpic" src="https://randomuser.me/api/portraits/women/56.jpg">
+<div class="right-side-chat__user" data-toggle="tooltip" title="آیلین زارعی" data-placement="left" data-user-id="user_7"><img class="right-side-chat__userpic" src="https://randomuser.me/api/portraits/women/56.jpg">
   <div class="unread-count">5</div>
   <div class="status-icon offline"></div>
 </div>
@@ -732,10 +732,86 @@
 </div>
     </div>
   </div>
-  <div class="rs_chat-ui__wrapper">
-    <div class="rs_chat-ui__top"><span>Чат викингов</span></div>
-    <div class="rs_chat-ui__content">
-      <div class="rs_chat-patch">
+  <div class="rs_chat__wrapper">
+    <div class="rs_chat__top"><span class="rs_chat__title">Чат викингов</span>
+      <button class="btn text-light" id="right_chat_btn_close"><i class="icon-close_24px"></i></button>
+    </div>
+    <div class="rs_chat__content">
+      <div class="rs_chat__ui d-none" id="chat__story">
+        <div class="rs_chat__story" id="chat__story_scroll">
+          <div class="rs_chat__empty" id="chat__empty">
+            <div class="rs_chat__patch">
+              <div class="rs_chat__patch_image"><img src="./assets/Icons-Tech-Comm.png"></div>
+              <div class="rs_chat__patch_text">Диалог пуст. Начните разговор, набрав ваше сообщение ниже.</div>
+            </div>
+          </div>
+          <div class="d-none" id="chat__content">
+            <div class="rs_chat__message-row contact"><img class="avatar" src="https://randomuser.me/api/portraits/men/63.jpg">
+              <div class="bubble">
+                <div class="message">Quickly come to the meeting room 1B, we have a big server issue</div>
+                <div class="time secondary-text">4/22/17, 8:00 AM</div>
+              </div>
+            </div>
+            <div class="rs_chat__message-row me">
+              <div class="bubble">
+                <div class="message">I’m having breakfast right now, can’t you wait for 10 minutes?</div>
+                <div class="time secondary-text">3/22/17, 3:55 PM</div>
+              </div>
+            </div>
+            <div class="rs_chat__message-row contact first-of-group"><img class="avatar" src="https://randomuser.me/api/portraits/men/63.jpg">
+              <div class="bubble">
+                <div class="message">Quickly come to the meeting room 1B, we have a big server issue</div>
+                <div class="time secondary-text">4/22/17, 8:00 AM</div>
+              </div>
+            </div>
+            <div class="rs_chat__message-row contact middle-of-group"><img class="avatar" src="https://randomuser.me/api/portraits/men/63.jpg">
+              <div class="bubble">
+                <div class="message">Quickly come to the meeting room 1B, we have a big server issue</div>
+                <div class="time secondary-text">4/22/17, 8:00 AM</div>
+              </div>
+            </div>
+            <div class="rs_chat__message-row contact last-of-group"><img class="avatar" src="https://randomuser.me/api/portraits/men/63.jpg">
+              <div class="bubble">
+                <div class="message">Quickly come to the meeting room 1B, we have a big server issue</div>
+                <div class="time secondary-text">4/22/17, 8:00 AM</div>
+              </div>
+            </div>
+            <div class="rs_chat__message-row me">
+              <div class="bubble">
+                <div class="message">I’m having breakfast right now, can’t you wait for 10 minutes?</div>
+                <div class="time secondary-text">3/22/17, 3:55 PM</div>
+              </div>
+            </div>
+            <div class="rs_chat__message-row contact"><img class="avatar" src="https://randomuser.me/api/portraits/men/63.jpg">
+              <div class="bubble">
+                <div class="message">Quickly come to the meeting room 1B, we have a big server issue</div>
+                <div class="time secondary-text">4/22/17, 8:00 AM</div>
+              </div>
+            </div>
+            <div class="rs_chat__message-row me">
+              <div class="bubble">
+                <div class="message">I’m having breakfast right now, can’t you wait for 10 minutes?</div>
+                <div class="time secondary-text">3/22/17, 3:55 PM</div>
+              </div>
+            </div>
+            <div class="rs_chat__message-row contact"><img class="avatar" src="https://randomuser.me/api/portraits/men/63.jpg">
+              <div class="bubble">
+                <div class="message">Quickly come to the meeting room 1B, we have a big server issue</div>
+                <div class="time secondary-text">4/22/17, 8:00 AM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rs_chat__form">
+          <div class="rs_chat__form-wrapper">
+            <form class="rs_chat__reply-form" onsubmit="return false;">
+              <textarea class="rs_chat__reply-textarea" placeholder="Напишите сообщение..."></textarea>
+              <button class="btn rs_chat__btn-send btn-circle waves-effect"><i class="far fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="rs_chat__patch">
         <div><img src="./assets/Icons-Tech-Comm.png"></div>
         <div>Выберите контакт, чтобы начать разговор.</div>
       </div>

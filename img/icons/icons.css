@@ -1,10 +1,10 @@
 @font-face {
     font-family: "icons";
-    src: url("./icons.eot?bc5b324f95e10bf1705683604a8041b3?#iefix") format("embedded-opentype"),
-url("./icons.woff2?bc5b324f95e10bf1705683604a8041b3") format("woff2"),
-url("./icons.woff?bc5b324f95e10bf1705683604a8041b3") format("woff"),
-url("./icons.ttf?bc5b324f95e10bf1705683604a8041b3") format("truetype"),
-url("./icons.svg?bc5b324f95e10bf1705683604a8041b3#icons") format("svg");
+    src: url("./icons.eot?037077228886d12ce541debe48635780?#iefix") format("embedded-opentype"),
+url("./icons.woff2?037077228886d12ce541debe48635780") format("woff2"),
+url("./icons.woff?037077228886d12ce541debe48635780") format("woff"),
+url("./icons.ttf?037077228886d12ce541debe48635780") format("truetype"),
+url("./icons.svg?037077228886d12ce541debe48635780#icons") format("svg");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -18,36 +18,39 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-favorite_24px:before {
+.icon-close_24px:before {
     content: "\f101";
 }
-.icon-favorite_border_24px:before {
+.icon-favorite_24px:before {
     content: "\f102";
 }
-.icon-favorite_outline_24px:before {
+.icon-favorite_border_24px:before {
     content: "\f103";
 }
-.icon-icons:before {
+.icon-favorite_outline_24px:before {
     content: "\f104";
 }
-.icon-language-solid:before {
+.icon-icons:before {
     content: "\f105";
 }
-.icon-Premium:before {
+.icon-language-solid:before {
     content: "\f106";
 }
-.icon-settings-cog:before {
+.icon-Premium:before {
     content: "\f107";
 }
-.icon-star_bordered:before {
+.icon-settings-cog:before {
     content: "\f108";
 }
-.icon-star_half:before {
+.icon-star_bordered:before {
     content: "\f109";
 }
-.icon-star_outline:before {
+.icon-star_half:before {
     content: "\f10a";
 }
-.icon-star:before {
+.icon-star_outline:before {
     content: "\f10b";
+}
+.icon-star:before {
+    content: "\f10c";
 }
