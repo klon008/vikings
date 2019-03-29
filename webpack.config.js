@@ -5,7 +5,7 @@ const outDir = path.join(__dirname, 'public');
 const UglifyJsPlugin = require('webpack-uglify-js-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const exclude_tmpl = /(node_modules|bower_components|cached_uglify|undr|my_sources)/;
+const exclude_tmpl = /(node_modules|bower_components|cached_uglify|undr|my_sources|js\/libs)/;
 const CopyPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const isProduction = process.argv[process.argv.indexOf('--mode') + 1] === 'production';

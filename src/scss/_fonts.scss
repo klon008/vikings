@@ -9,17 +9,17 @@ $lato-font-path: "../fonts/lato";
 //   font-weight: normal;
 //   font-style: normal;
 // }
-.eq:before{
-display: inline-block;
- font-family: 'eq';
- font-style: normal;
- font-weight: normal;
- line-height: 1.5;
- -webkit-font-smoothing: antialiased;
- -moz-osx-font-smoothing: grayscale
-}
-.eq-setting:before{content:'\0041';}
-.eq-heart:before{content:'\0042';}
+//.eq:before{
+//display: inline-block;
+// font-family: 'eq';
+// font-style: normal;
+// font-weight: normal;
+// line-height: 1.5;
+// -webkit-font-smoothing: antialiased;
+// -moz-osx-font-smoothing: grayscale
+//}
+//.eq-setting:before{content:'\0041';}
+//.eq-heart:before{content:'\0042';}
 
 
 /*!
@@ -27,6 +27,7 @@ display: inline-block;
 *  License - https://github.com/zavoloklom/material-design-iconic-font/blob/gh-pages/License.md (Attribution-ShareAlike 4.0 International license)
 */
 
+/*
 @font-face {
   font-family: 'Material Design Iconic Font';
   src: url('../fonts/Material-Design-Iconic-Font.eot');
@@ -41,6 +42,7 @@ display: inline-block;
   font-weight: normal;
   font-style: normal;
 }
+*/
 
 
 @font-face {

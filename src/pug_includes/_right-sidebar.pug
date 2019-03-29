@@ -1,15 +1,82 @@
 aside.right-side-chat__wrapper#right-side-chat
     .rs_users__wrapper
         .rs_users__top
+            img.selected_user.d-none(src='https://randomuser.me/api/portraits/men/63.jpg')
             button(type="button").btn.no-outline.text-light.waves-effect.waves-light.right-element#right_chat_btn
                         i.far.fa-comment-alt
         div.right-side-chat__users#right-side-chat__users
             include _right_sidebar_users
-    .rs_chat-ui__wrapper
-        .rs_chat-ui__top
-            span Чат викингов
-        .rs_chat-ui__content
-            .rs_chat-patch
+    .rs_chat__wrapper
+        .rs_chat__top
+            span.rs_chat__title Чат викингов
+            button.btn.text-light#right_chat_btn_close
+                i.icon-close_24px
+        .rs_chat__content
+            .rs_chat__ui.d-none#chat__story
+                .rs_chat__story#chat__story_scroll
+                    #chat__empty.rs_chat__empty
+                        .rs_chat__patch
+                            div.rs_chat__patch_image
+                                img(src=require('../img/Icons-Tech-Comm.png'))
+                            div.rs_chat__patch_text Диалог пуст. Начните разговор, набрав ваше сообщение ниже.
+                    #chat__content.d-none
+                        .rs_chat__message-row.contact
+                            img.avatar(src='https://randomuser.me/api/portraits/men/63.jpg')
+                            .bubble
+                                .message Quickly come to the meeting room 1B, we have a big server issue
+                                .time.secondary-text 4/22/17, 8:00 AM
+
+                        .rs_chat__message-row.me
+                            .bubble
+                                .message I’m having breakfast right now, can’t you wait for 10 minutes?
+                                .time.secondary-text 3/22/17, 3:55 PM
+
+                        .rs_chat__message-row.contact.first-of-group
+                            img.avatar(src='https://randomuser.me/api/portraits/men/63.jpg')
+                            .bubble
+                                .message Quickly come to the meeting room 1B, we have a big server issue
+                                .time.secondary-text 4/22/17, 8:00 AM
+                        .rs_chat__message-row.contact.middle-of-group
+                            img.avatar(src='https://randomuser.me/api/portraits/men/63.jpg')
+                            .bubble
+                                .message Quickly come to the meeting room 1B, we have a big server issue
+                                .time.secondary-text 4/22/17, 8:00 AM
+                        .rs_chat__message-row.contact.last-of-group
+                            img.avatar(src='https://randomuser.me/api/portraits/men/63.jpg')
+                            .bubble
+                                .message Quickly come to the meeting room 1B, we have a big server issue
+                                .time.secondary-text 4/22/17, 8:00 AM
+
+
+                        .rs_chat__message-row.me
+                            .bubble
+                                .message I’m having breakfast right now, can’t you wait for 10 minutes?
+                                .time.secondary-text 3/22/17, 3:55 PM
+
+                        .rs_chat__message-row.contact
+                            img.avatar(src='https://randomuser.me/api/portraits/men/63.jpg')
+                            .bubble
+                                .message Quickly come to the meeting room 1B, we have a big server issue
+                                .time.secondary-text 4/22/17, 8:00 AM
+
+                        .rs_chat__message-row.me
+                            .bubble
+                                .message I’m having breakfast right now, can’t you wait for 10 minutes?
+                                .time.secondary-text 3/22/17, 3:55 PM
+
+                        .rs_chat__message-row.contact
+                            img.avatar(src='https://randomuser.me/api/portraits/men/63.jpg')
+                            .bubble
+                                .message Quickly come to the meeting room 1B, we have a big server issue
+                                .time.secondary-text 4/22/17, 8:00 AM
+
+                .rs_chat__form
+                    .rs_chat__form-wrapper
+                        form.rs_chat__reply-form(onsubmit="return false;")
+                                textarea.rs_chat__reply-textarea(placeholder="Напишите сообщение..." )
+                                button.btn.rs_chat__btn-send.btn-circle.waves-effect
+                                    i.far.fa-paper-plane
+            .rs_chat__patch
                 div
                     img(src=require('../img/Icons-Tech-Comm.png'))
                 div Выберите контакт, чтобы начать разговор.

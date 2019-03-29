@@ -1,10 +1,10 @@
 ;(($)=>{
     let leftBarShowing = true;
-    const leftBar = $('#left_bar')
-    const topbar = $('#topbar')
-    const body = $('#content-body')
+    const leftBar = $('#left_bar');
+    const topbar = $('#topbar');
+    const body = $('#content-body');
     $('#leftBarToggler').click((e)=>{
-        leftBarShowing = !leftBarShowing
+        leftBarShowing = !leftBarShowing;
         if (!leftBarShowing)
             for (let i of [leftBar, topbar, body]){
                 i.addClass('collapsed-left')
@@ -15,4 +15,4 @@
         }
         
     })
-})(window.jQuery)
+})(window.jQuery);

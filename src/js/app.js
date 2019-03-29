@@ -1,11 +1,11 @@
 const $ = require('jquery'); //jquery
 const bootstrap = require('bootstrap'); //подключаю бутстрап
 const wavesjs = require('./undr/waves.js'); // библиотека для анимации волн при клике
+
 const TweenMax = require('./undr/TweenMax.min.js'); //Крутая либа для анимаций. Необходима для счетчика
 const countdown = require('./undr/_countdown.js'); //Код счетчика
 const slickCarousel = require('slick-carousel');
 /*const main = require('./undr/main.js'); //Мой код*/
-
 //import 'flag-icon-css/sass/flag-icon.scss'; //Флаги убрал и оставил только 2 флага. все подключается в scss.scss
 const OverlayScrollbars = require('overlayscrollbars'); //кастомный скроллбар
 import 'overlayscrollbars/css/OverlayScrollbars.css'; //кастомный скроллбар
@@ -35,13 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
     } else { // webkit - safari/chrome
       alert('Нажмите ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') + ' + D чтобы добавить сайт в закладки.');
     }
-  })
+  });
+
   $('[data-toggle="tooltip"]').tooltip({
     container: 'body',
     boundary: 'window',
     paddingAbsolute: true
   });
-  for (var scrl of ['left_bar_wrapper', 'right-side-chat__users']) {
+  for (var scrl of ['left_bar_wrapper', 'right-side-chat__users', 'chat__story_scroll']) {
     OverlayScrollbars(document.getElementById(scrl), {
       overflowBehavior: {
         x: "hidden"
@@ -51,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
   var MainContentOverlay = OverlayScrollbars(document.querySelector('main .scroll-content'), {
     scrollbars: {
       autoHide: "leave",

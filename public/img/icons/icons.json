@@ -1,13 +1,14 @@
 {
-    "favorite_24px": "\\f101",
-    "favorite_border_24px": "\\f102",
-    "favorite_outline_24px": "\\f103",
-    "icons": "\\f104",
-    "language-solid": "\\f105",
-    "Premium": "\\f106",
-    "settings-cog": "\\f107",
-    "star_bordered": "\\f108",
-    "star_half": "\\f109",
-    "star_outline": "\\f10a",
-    "star": "\\f10b"
+    "close_24px": "\\f101",
+    "favorite_24px": "\\f102",
+    "favorite_border_24px": "\\f103",
+    "favorite_outline_24px": "\\f104",
+    "icons": "\\f105",
+    "language-solid": "\\f106",
+    "Premium": "\\f107",
+    "settings-cog": "\\f108",
+    "star_bordered": "\\f109",
+    "star_half": "\\f10a",
+    "star_outline": "\\f10b",
+    "star": "\\f10c"
 }

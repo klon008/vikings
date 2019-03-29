@@ -9,11 +9,12 @@ generateCarousel();
 
 new Promise((resolve,r)=>{
     console.log('начинаю работу по генерации случайных пользователей')
-    let users = generateUsers()
-    resolve(users)
+    //let users = generateUsers()
+    //resolve(users)
+    resolve()
 }).then(users=>{
     console.log('начинаю работу по генерации товаров магазина')
-    generateMagazine(users)
+    //generateMagazine(users)
 }).then(resolved=>{
     console.log('начинаю работу по конвертации SVG в Иконочный шрифт')
     runScript(icontGenerator,args, (err)=> {
@@ -28,8 +29,8 @@ new Promise((resolve,r)=>{
 
 function runScript(scriptPath, args, callback) {
 
-    var invoked = false;
-    var process = childProcess.fork(scriptPath, args);
+    let invoked = false;
+    let process = childProcess.fork(scriptPath, args);
 
     process.on('error', function (err) {
         if (invoked) return;
