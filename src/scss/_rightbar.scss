@@ -248,20 +248,33 @@
         outline: none;
         border: none;
         width: 100%;
-        padding: 12px 48px 10px 16px;
+        padding: 12px 48px 10px 48px;
         background-color: transparent;
         height: 48px;
+        vertical-align: bottom;
     }
 
     &__btn-send {
         right: 0;
-        bottom: 6px;
+        bottom: 1px;
         position: absolute;
         width: 45px;
         height: 45px;
         font-size: 19px;
 
         &:focus {
+            box-shadow: none;
+        }
+    }
+    &__btn-attach_file{
+        left: 0;
+        bottom: 1px;
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        font-size: 19px;
+        padding: 6px;
+        &:focus{
             box-shadow: none;
         }
     }

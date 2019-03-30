@@ -59,6 +59,7 @@ $leftbar_func_anumation: ease;
     flex-wrap: nowrap;
     justify-content: start;
     align-items: stretch;
+    overflow: hidden;
   }
 
   .navbar>.container-fluid.topbar-flex {
@@ -168,6 +169,7 @@ $leftbar_func_anumation: ease;
 
     .dropdown-menu {
       border-top: none;
+      position: fixed;
     }
 
     display: flex;
