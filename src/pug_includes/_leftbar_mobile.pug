@@ -1,0 +1,48 @@
+.sidebar__additional-mobile-menu
+    .navbar
+        button(type="button").btn.no-outline.text-light.waves-effect.waves-light#mobile-right_chat_btn
+            i.far.fa-comment-alt
+        button.btn.no-outline.text-light.waves-effect.waves-light(data-toggle="collapse" data-target="#searchMobileCollapse" type="button")
+            i.material-icons-new.outline-search.icon-white
+        button.btn.no-outline.text-light.waves-effect.waves-light(data-toggle="collapse" data-target="#crMobileCollapse" type="button")
+            i.material-icons-new.outline-pages.icon-white
+        button(type="button").btn.no-outline.text-light.waves-effect.waves-light#add_to_fav
+            i.icon-favorite_outline_24px
+        button(type="button").btn.no-outline.text-light.waves-effect.waves-light
+            i.material-icons-new.outline-shopping_cart.icon-white
+
+        .dropdown.hidden-xs.open
+            button.btn.no-outline.text-light.waves-effect.waves-light(data-toggle='dropdown' aria-expanded='true')
+                i.material-icons-new.outline-translate.icon-white
+            ul.dropdown-menu.dropdown-menu__right.dropdown-menu__undark
+                li
+                    a(href='/rus')
+                        i.flag-icon.flag-icon-ru
+                        |  Русский
+                li.divider
+                li
+                    a(href='/english')
+                        i.flag-icon.flag-icon-us
+                        |  English US
+        .dropdown.hidden-xs.open
+            button.btn.no-outline.text-light.waves-effect.waves-light(data-toggle='dropdown' aria-expanded='true')
+                i.icon-settings-cog
+            .dropdown-menu.dropdown-menu__right.dropdown-menu__undark
+                li
+                    a(href='/site/profile')
+                        i.far.fa-user
+                        |  Профиль
+                li.divider
+                li
+                    a(href='/logout')
+                        i.fas.fa-power-off.text-danger
+                        |  Выход
+    .collapse#searchMobileCollapse
+        .mobile-collapse-elem
+            input.form-control.mobile-search(type='text' placeholder='Найти на сайте')
+    .collapse#crMobileCollapse
+        .mobile-collapse-elem
+            button.btn.btn-primary
+                span Просмотр объявлений
+            button.btn.btn-warning
+                span Создать объявление

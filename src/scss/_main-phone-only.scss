@@ -1,0 +1,15 @@
+@include for-phone-only {
+    #content-body {
+        margin-left: 0;
+        padding-top: 57px;
+        main{
+            padding-right: 0;
+            .slick-slide img{
+            }
+        }
+        &.collapsed-left{
+            margin-left: 0;
+        }
+    }
+    
+}

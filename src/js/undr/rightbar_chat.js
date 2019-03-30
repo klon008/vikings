@@ -93,6 +93,7 @@
     const usersElemts = $('.right-side-chat__user');
     const topIcon = $('.rs_users__top .selected_user').first();
     const closeBtn = $('#right_chat_btn_close');
+    const mobileBtn = $('#mobile-right_chat_btn');
     function showRightBar(){
         for (let i of [rightBar, body]) {
             i.addClass('collapsed-right');
@@ -107,16 +108,18 @@
         $("#chat__content").addClass('d-none');
         $("#chat__empty").removeClass('d-none');
     }
-    btn.click((e) => {
-
-        if (!rightbarShowing) {
-            showRightBar();
-            $('#chat__story').addClass('d-none');
-        } else if (rightbarShowing) {
-            hideRightBar();
-        }
-        rightbarShowing = !rightbarShowing;
-    });
+    function btnClick(e){
+            if (!rightbarShowing) {
+                showRightBar();
+                $('#chat__story').addClass('d-none');
+            } else if (rightbarShowing) {
+                hideRightBar();
+            }
+            rightbarShowing = !rightbarShowing;
+        
+    }
+    btn.click(btnClick);
+    mobileBtn.click(btnClick);
 
     closeBtn.click(e => {
         rightbarShowing = false;

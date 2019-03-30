@@ -6,6 +6,8 @@ $sidebar-background: #2d323e;
 $main-font-color: #ffffff;
 $right-bar-width: 58px;
 $body-bg-color:  #3c434d;
+$leftbar_time_animation: 0.5s;
+$leftbar_func_anumation: ease;
 @mixin collapsed(){
   .collapsed-left{
     @content;
@@ -39,13 +41,13 @@ body{
   background-color: $body-bg-color;
   overflow: hidden;
 }
-@import "./adaptive_st";
 @import "./my_mixins";
+@import "./adaptive_st";
 @import "./fonts";
 @import "./waves";
 @import "./countdown";
 @import "./header";
-@import "./sidebar";
+@import "./leftbar";
 @import "./rightbar";
 @import "./main";
 @import "./flags";
@@ -114,4 +116,17 @@ body{
 .load * {
   @include transition(none !important);
   @include animation-duration(0s);
+}
+
+.navbar-toggler{
+  border: none;
+  transition: all 0.3s ease-out;
+  height: $top-bar-height;
+  border-radius: 0;
+  &:focus{
+    outline:none;
+  }
+  &:hover{
+    background: #767676;
+  }
 }

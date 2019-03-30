@@ -2,11 +2,11 @@ $magazine_element-color: #2e323e;
 
 .magazine__cards_wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 10px;
 
-    @media (max-width: 960px) {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    @include for-desktop-up{
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     }
 
     .card {
@@ -275,4 +275,5 @@ $magazine_element-color: #2e323e;
 
 .flex-100_2-left {
     flex-grow: 100 !important;
+    width: 300px;
 }

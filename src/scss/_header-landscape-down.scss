@@ -1,0 +1,5 @@
+@include for-phone-only(){
+    .navbar{
+        display: none !important;
+    }
+}

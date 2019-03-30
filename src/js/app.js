@@ -109,16 +109,23 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         breakpoint: 692,
         settings: {
-          slidesToShow: 2,
-          centerMode: true,
+          slidesToShow: 3,
+          centerMode: true
         }
       },
       
       {
-        breakpoint: 572,
+        breakpoint: 367,
+        settings: {
+          slidesToShow: 2,
+          centerMode: true
+        }
+      },
+      {
+        breakpoint: 275,
         settings: {
           slidesToShow: 1,
-          centerMode: true,
+          centerMode: true
         }
       },
     ]

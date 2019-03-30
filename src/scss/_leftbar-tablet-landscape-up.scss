@@ -1,0 +1,81 @@
+@include for-tablet-portrait-up {
+    &#left_bar.collapsed-left {
+
+        width: $collapsed-width;
+
+        .sidebar__list li {
+            text-align: center;
+            padding-left: 10px;
+        }
+
+        .sidebar__content {
+            padding-top: 0;
+        }
+
+        .sidebar__user {
+            padding: 0;
+        }
+
+        .sidebar__usericon {
+            top: 0;
+            background-color: transparent;
+
+        }
+
+        .sidebar__avatar {
+            width: 40px;
+            height: 40px;
+        }
+
+        .sidebar__username,
+        .sidebar__useremail {
+            width: 0;
+        }
+
+        .nav-link-title {
+            width: 0;
+            @include opacity(0);
+        }
+
+        .sidebar__rootlink {
+            justify-content: start;
+            padding-left: 20px;
+
+            i.arrow {
+                margin-left: 0;
+            }
+        }
+
+        .nav-link-badge {
+            margin-left: 0;
+        }
+
+        .group-title {
+            text-align: center;
+
+            span {
+                width: 0;
+                height: 0;
+                @include transition(width, height $leftbar_time_animation $leftbar_func_anumation);
+            }
+
+            &:before {
+                content: '';
+                display: inline-block;
+                position: relative;
+                min-width: 1.6rem;
+                border-top: 2px solid;
+                opacity: .2;
+            }
+        }
+
+        .logo__sitename {
+            width: 0;
+            @include opacity(0);
+        }
+
+        .topbar-left {
+            width: 95px;
+        }
+    }
+}

@@ -19,6 +19,42 @@
         </div>
         <div class="sidebar__usericon"><img class="sidebar__avatar" src="https://kwork.ru/files/avatar/large/30/24862-2.jpg"></div>
       </div>
+<div class="sidebar__additional-mobile-menu">
+  <div class="navbar">
+    <button class="btn no-outline text-light waves-effect waves-light" type="button" id="mobile-right_chat_btn"><i class="far fa-comment-alt"></i></button>
+    <button class="btn no-outline text-light waves-effect waves-light" data-toggle="collapse" data-target="#searchMobileCollapse" type="button"><i class="material-icons-new outline-search icon-white"></i></button>
+    <button class="btn no-outline text-light waves-effect waves-light" data-toggle="collapse" data-target="#crMobileCollapse" type="button"><i class="material-icons-new outline-pages icon-white"></i></button>
+    <button class="btn no-outline text-light waves-effect waves-light" type="button" id="add_to_fav"><i class="icon-favorite_outline_24px"></i></button>
+    <button class="btn no-outline text-light waves-effect waves-light" type="button"><i class="material-icons-new outline-shopping_cart icon-white"></i></button>
+    <div class="dropdown hidden-xs open">
+      <button class="btn no-outline text-light waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><i class="material-icons-new outline-translate icon-white"></i></button>
+      <ul class="dropdown-menu dropdown-menu__right dropdown-menu__undark">
+        <li><a href="/rus"><i class="flag-icon flag-icon-ru"></i> Русский</a></li>
+        <li class="divider"></li>
+        <li><a href="/english"><i class="flag-icon flag-icon-us"></i> English US</a></li>
+      </ul>
+    </div>
+    <div class="dropdown hidden-xs open">
+      <button class="btn no-outline text-light waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><i class="icon-settings-cog"></i></button>
+      <div class="dropdown-menu dropdown-menu__right dropdown-menu__undark">
+        <li><a href="/site/profile"><i class="far fa-user"></i> Профиль</a></li>
+        <li class="divider"></li>
+        <li><a href="/logout"><i class="fas fa-power-off text-danger"></i> Выход</a></li>
+      </div>
+    </div>
+  </div>
+  <div class="collapse" id="searchMobileCollapse">
+    <div class="mobile-collapse-elem">
+      <input class="form-control mobile-search" type="text" placeholder="Найти на сайте">
+    </div>
+  </div>
+  <div class="collapse" id="crMobileCollapse">
+    <div class="mobile-collapse-elem">
+      <button class="btn btn-primary"><span>Просмотр объявлений</span></button>
+      <button class="btn btn-warning"><span>Создать объявление</span></button>
+    </div>
+  </div>
+</div>
       <div class="sidebar__content">
         <div class="vertical-menu-block">
           <div class="group-title"><span>Статистика по ресурсам</span></div>
@@ -415,7 +451,7 @@
   </nav>
 </aside>
     <div class="content-body" id="content-body">
-<header>
+<header class="top-site-header">
   <div class="navbar navbar-dark bg-dark-m shadow-sm">
     <div class="container-fluid topbar-flex" id="topbar">
       <div class="counter">
@@ -448,9 +484,7 @@
       </div>
       <div class="topbar__right__buttons">
         <button class="btn no-outline text-light waves-effect waves-light" type="button" id="add_to_fav"><i class="icon-favorite_outline_24px"></i></button>
-        <button class="btn no-outline text-light waves-effect waves-light" type="button">
-          <!--i.fas.fa-shopping-cart--><i class="material-icons-new outline-shopping_cart icon-white"></i>
-        </button>
+        <button class="btn no-outline text-light waves-effect waves-light" type="button"><i class="material-icons-new outline-shopping_cart icon-white"></i></button>
         <div class="dropdown hidden-xs open">
           <button class="btn no-outline text-light waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><i class="icon-language-solid"></i></button>
           <ul class="dropdown-menu dropdown-menu__right dropdown-menu__undark">
