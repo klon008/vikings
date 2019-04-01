@@ -49,7 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       scrollbars: {
         autoHide: "leave"
-      }
+      },
+      clipAlways: false,
+      paddingAbsolute: true,
     });
   }
   var MainContentOverlay = OverlayScrollbars(document.querySelector('main .scroll-content'), {
