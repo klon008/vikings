@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let body = document.getElementsByTagName("body")[0];
   body.classList.remove('load');
   let bookmare = document.getElementById('add_to_fav');
-  bookmare.addEventListener('click', () => {
+  bookmare.addEventListener('click touch', () => {
     if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
       window.sidebar.addPanel(document.title, window.location.href, '');
     } else if (window.external && ('AddFavorite' in window.external)) { // IE Favorite

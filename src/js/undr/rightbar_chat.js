@@ -118,10 +118,10 @@
             rightbarShowing = !rightbarShowing;
         
     }
-    btn.click(btnClick);
-    mobileBtn.click(btnClick);
+    btn.on('click touch',btnClick);
+    mobileBtn.on('click touch',btnClick);
 
-    closeBtn.click(e => {
+    closeBtn.on('click touch', e => {
         rightbarShowing = false;
         hideRightBar();
     });
@@ -129,7 +129,7 @@
 
     usersElemts.each(e => {
         let user = $(usersElemts[e]);
-        user.click(e => {
+        user.on('click touch', e => {
             if (!rightbarShowing){
                 showRightBar();
             }

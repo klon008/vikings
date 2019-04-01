@@ -34,6 +34,7 @@ main {
     }
 }
 #content-body{
+    z-index: 0;
     @include transition(margin-left $leftbar_time_animation $leftbar_func_anumation);
     &.collapsed-left{
         margin-left: $collapsed-width;
