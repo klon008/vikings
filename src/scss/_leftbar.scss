@@ -69,7 +69,7 @@ $collapsed-width: 95px;
 }
 
 .sidebar__usericon {
-    position: absolute;
+    position: fixed;
     top: 74px;
     border-radius: 50%;
     padding: 8px;
@@ -97,6 +97,7 @@ $collapsed-width: 95px;
 .sidebar_content_wrapper {
     margin-top: $top-bar-height;
     height: 100%;
+    padding-bottom: 2em;
 }
 
 .sidebar__content {
