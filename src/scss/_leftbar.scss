@@ -3,7 +3,7 @@ $collapsed-width: 95px;
 #left_bar {
     width: $left-bar-width;
     background-color: #2e323e;
-    position: absolute;
+    position: fixed;
     left: 0;
     height: 100%;
     z-index: 9;
@@ -69,7 +69,7 @@ $collapsed-width: 95px;
 }
 
 .sidebar__usericon {
-    position: fixed;
+    position: absolute;
     top: 74px;
     border-radius: 50%;
     padding: 8px;
