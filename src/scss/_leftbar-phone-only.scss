@@ -42,14 +42,13 @@
     .sidebar_content_wrpper{
         height: 100%;
         flex: 1 0;
-        padding-bottom: 2em;
-        position: absolute !important;
+        // padding-bottom: 2em;
+        position: fixed !important;
         width: 100%;
         top: 57px;
         left: 0;
         @include transition(left $leftbar_time_animation $leftbar_func_anumation);
         background-color: #2e323e;
-        height: 100vh;
     }
     #left_bar{
         background: transparent;
@@ -81,5 +80,8 @@
     }
     .flex-0_1-left{
         width: 100%;
+    }
+    .sidebar__content{
+        margin-bottom: 5em;
     }
 }
