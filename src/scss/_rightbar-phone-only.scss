@@ -7,6 +7,17 @@
         &.collapsed-right{
             width: 100%;
         }
+        .rs_chat__story{
+            padding-left: 0;
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+        .rs_chat_with_user__content{
+            padding-left: 40px;
+        }
+        .os-host-overflow > .os-padding{
+            overflow-x: visible;
+        }
         .rs_chat__wrapper{
             width: 100%;
             min-width: 0;
